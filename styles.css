@@ -1,0 +1,391 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.logo-text {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: opacity 0.3s ease;
+}
+
+.nav-menu a:hover {
+    opacity: 0.7;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+    margin-top: 60px;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.hero-text p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 40px;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.cta-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 15px 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.cta-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.hero-side h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    text-align: right;
+    opacity: 0.8;
+}
+
+/* Companies Section */
+.companies {
+    padding: 100px 0;
+    background: #0a0a0a;
+}
+
+.companies h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    opacity: 0.7;
+    margin-bottom: 60px;
+    color: #cccccc;
+}
+
+.companies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.company-card {
+    background: #111111;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.company-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.company-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.company-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.company-card:hover .company-image img {
+    transform: scale(1.05);
+}
+
+.company-content {
+    padding: 25px;
+}
+
+.company-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+.company-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.8;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.company-link {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.company-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+
+
+/* About Section */
+.about {
+    padding: 100px 0;
+    background: #111111;
+}
+
+.about-content {
+    max-width: 800px;
+}
+
+.section-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 16px;
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.stats {
+    display: flex;
+    gap: 60px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 14px;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+    margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .hero-side h2 {
+        text-align: left;
+    }
+    
+    .companies-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .stats {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-side h2 {
+        font-size: 2rem;
+    }
+    
+    .companies h2,
+    .about h2 {
+        font-size: 2rem;
+    }
+    
+    .companies-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-side h2 {
+        font-size: 1.5rem;
+    }
+    
+    .companies h2,
+    .about h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 12px;
+    }
+    
+    .company-content {
+        padding: 20px;
+    }
+}

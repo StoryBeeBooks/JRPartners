@@ -1,0 +1,15 @@
+﻿# IDE
+.vs/
+.vscode/
+*.suo
+*.user
+*.vsidx
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Build/artifacts (future-proof)
+node_modules/
+dist/
+build/

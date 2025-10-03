@@ -44,13 +44,13 @@
     
     <!-- Technical SEO -->
     <link rel="canonical" href="https://storybeeBooks.github.io/JRPartners/">
-    <meta name="theme-color" content="#c9a961">
-    <meta name="msapplication-TileColor" content="#c9a961">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="msapplication-TileColor" content="#0a0a0a">
     
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="loading">
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-container">
@@ -750,8 +750,7 @@
         
         function hideLoadingScreen() {
             loadingScreen.classList.add('hidden');
-            document.body.style.overflow = 'visible';
-            document.body.style.overflowY = 'auto';
+            document.body.classList.remove('loading');
             
             // Additional iOS fix
             setTimeout(() => {

@@ -1223,6 +1223,51 @@ body {
 }
 
 /* ===============================================
+   Image Section with Quote Overlay
+   =============================================== */
+.image-section .full-width-image {
+    position: relative;
+}
+
+.image-quote-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.image-quote-overlay h2 {
+    font-size: 4rem;
+    font-weight: 300;
+    color: #ffffff;
+    letter-spacing: 3px;
+    margin: 0;
+    font-style: italic;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Responsive Design for Image Quote Overlay */
+@media (max-width: 768px) {
+    .image-quote-overlay h2 {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-quote-overlay h2 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+}
+
+/* ===============================================
    Testimonials Section
    =============================================== */
 .testimonials {

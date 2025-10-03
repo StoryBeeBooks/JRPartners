@@ -258,6 +258,14 @@
         </div>
     </footer>
 
+    <!-- Cookies Consent Bar -->
+    <div class="cookie-consent-bar" id="cookieConsent">
+        <div class="cookie-content">
+            <p>We use cookies to make your browsing smoother, show you more relevant content, and understand how our site is used. By closing this message or continuing to use our site, you agree to our use of cookies as explained in our <a href="cookies.html">Cookie Policy</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+            <button class="cookie-close-btn" id="cookieCloseBtn" onclick="closeCookieConsent(); return false;" type="button">&times;</button>
+        </div>
+    </div>
+
     <script>
     // Enhanced flip card functionality - optimized for mobile touch and desktop hover
     document.addEventListener('DOMContentLoaded', function() {
@@ -346,14 +354,45 @@
             }
         });
         
-        // Ensure buttons and links are always clickable
+        // Ensure buttons and links are always clickable (but exclude cookie close button)
         document.addEventListener('click', function(e) {
+            // Don't interfere with cookie close button
+            if (e.target.id === 'cookieCloseBtn' || e.target.closest('#cookieCloseBtn')) {
+                return;
+            }
+            
             if (e.target.tagName === 'A' || e.target.closest('a') || 
                 e.target.tagName === 'BUTTON' || e.target.closest('button')) {
                 e.stopPropagation();
             }
         }, true);
+        
+        // Cookie consent functionality - check if user has already given consent
+        const consentGiven = localStorage.getItem('cookieConsent');
+        if (consentGiven === 'accepted') {
+            document.getElementById('cookieConsent').style.display = 'none';
+        }
+        
+        // Cookie close button handled by onclick attribute
     });
+    
+    // Cookie consent functionality
+    function closeCookieConsent() {
+        console.log('closeCookieConsent function called'); // Debug log
+        const consentBar = document.getElementById('cookieConsent');
+        if (consentBar) {
+            console.log('Consent bar found, hiding...'); // Debug log
+            consentBar.style.display = 'none';
+            localStorage.setItem('cookieConsent', 'accepted');
+            console.log('Consent hidden and saved to localStorage'); // Debug log
+        } else {
+            console.log('Consent bar not found!'); // Debug log
+        }
+        return false;
+    }
+    
+    // Make function globally available
+    window.closeCookieConsent = closeCookieConsent;
     </script>
 </body>
 </html>

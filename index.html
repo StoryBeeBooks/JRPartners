@@ -723,15 +723,10 @@
     
     // Cookie consent functionality
     function closeCookieConsent() {
-        console.log('closeCookieConsent function called'); // Debug log
         const consentBar = document.getElementById('cookieConsent');
         if (consentBar) {
-            console.log('Consent bar found, hiding...'); // Debug log
             consentBar.style.display = 'none';
             localStorage.setItem('cookieConsent', 'accepted');
-            console.log('Consent hidden and saved to localStorage'); // Debug log
-        } else {
-            console.log('Consent bar not found!'); // Debug log
         }
         return false;
     }

@@ -441,37 +441,48 @@
                 <p class="section-subtitle">Real feedback from satisfied customers who trusted us with their projects</p>
             </div>
             
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <span>★★★★★</span>
-                    </div>
-                    <p class="testimonial-text">"JRPartners transformed our kitchen beyond our expectations. Their stone fabrication work is absolutely stunning, and the custom cabinetry is flawless. Professional team, on-time delivery, and exceptional quality."</p>
-                    <div class="testimonial-author">
-                        <strong>Sarah Mitchell</strong>
-                        <span>Luxury Home Owner, Toronto</span>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <span>★★★★★</span>
-                    </div>
-                    <p class="testimonial-text">"We've used JRPartners for multiple commercial projects. Their doors & windows division delivered outstanding results for our office building. Reliable, professional, and always exceed expectations."</p>
-                    <div class="testimonial-author">
-                        <strong>Michael Chen</strong>
-                        <span>Property Developer, Markham</span>
+            <div class="testimonials-elegant">
+                <div class="testimonial-quote-card">
+                    <div class="quote-mark-large">"</div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">JRPartners transformed our kitchen beyond our expectations. Their stone fabrication work is absolutely stunning, and the custom cabinetry is flawless. Professional team, on-time delivery, and exceptional quality."</p>
+                        <div class="testimonial-author">
+                            <div class="author-name">Sarah Mitchell</div>
+                            <div class="author-title">Luxury Home Owner, Toronto</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <span>★★★★★</span>
+                <div class="testimonial-quote-card">
+                    <div class="quote-mark-large">"</div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">We've used JRPartners for multiple commercial projects. Their doors & windows division delivered outstanding results for our office building. Reliable, professional, and always exceed expectations."</p>
+                        <div class="testimonial-author">
+                            <div class="author-name">Michael Chen</div>
+                            <div class="author-title">Property Developer, Markham</div>
+                        </div>
                     </div>
-                    <p class="testimonial-text">"The interior design team at JRPartners created our dream home. From flooring to stone retail, everything was coordinated perfectly. Their attention to detail is unmatched."</p>
-                    <div class="testimonial-author">
-                        <strong>Jennifer Rodriguez</strong>
-                        <span>Homeowner, Vaughan</span>
+                </div>
+
+                <div class="testimonial-quote-card">
+                    <div class="quote-mark-large">"</div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">The interior design team at JRPartners created our dream home. From flooring to stone retail, everything was coordinated perfectly. Their attention to detail is unmatched."</p>
+                        <div class="testimonial-author">
+                            <div class="author-name">Jennifer Rodriguez</div>
+                            <div class="author-title">Homeowner, Vaughan</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-quote-card">
+                    <div class="quote-mark-large">"</div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">Working with your company has been a real pleasure. Your interior designers have demonstrated creativity, attention to detail, and the ability to bring our wishes to life. Our home has become a truly wonderful place!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-name">Ksenia Marchenko</div>
+                            <div class="author-title">Toronto, Canada</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -598,7 +609,10 @@
             const supportsHover = window.matchMedia('(hover: hover)').matches;
             
             if (!supportsHover) {
-                // Mobile/touch devices - optimized touch handling
+                // Mobile/touch devices - optimized touch handling without preventing scroll
+                let touchStartY = 0;
+                let touchMoved = false;
+                
                 card.addEventListener('touchstart', function(e) {
                     // Don't flip if touching a button or link
                     if (e.target.tagName === 'A' || e.target.closest('a') || 
@@ -606,8 +620,21 @@
                         return;
                     }
                     touchStarted = true;
-                    e.preventDefault();
-                }, { passive: false });
+                    touchStartY = e.touches[0].clientY;
+                    touchMoved = false;
+                }, { passive: true });
+                
+                card.addEventListener('touchmove', function(e) {
+                    if (touchStarted) {
+                        const touchCurrentY = e.touches[0].clientY;
+                        const touchDifference = Math.abs(touchCurrentY - touchStartY);
+                        
+                        // If user moved more than 10px, consider it scrolling
+                        if (touchDifference > 10) {
+                            touchMoved = true;
+                        }
+                    }
+                }, { passive: true });
                 
                 card.addEventListener('touchend', function(e) {
                     // Don't flip if touching a button or link
@@ -616,27 +643,29 @@
                         return;
                     }
                     
-                    if (touchStarted) {
+                    // Only flip if touch didn't move (not scrolling)
+                    if (touchStarted && !touchMoved) {
                         e.preventDefault();
                         toggleFlip();
-                        touchStarted = false;
                     }
+                    
+                    touchStarted = false;
+                    touchMoved = false;
                 }, { passive: false });
                 
-                // Fallback click event for mobile browsers
+                // Fallback click event for mobile browsers (passive to allow scrolling)
                 card.addEventListener('click', function(e) {
                     // Don't flip if clicking on a button or link
                     if (e.target.tagName === 'A' || e.target.closest('a') || 
                         e.target.tagName === 'BUTTON' || e.target.closest('button')) {
                         return;
                     }
-                    e.preventDefault();
-                    // Small delay to prevent double-firing with touch events
-                    setTimeout(() => {
-                        if (!touchStarted) {
-                            toggleFlip();
-                        }
-                    }, 10);
+                    
+                    // Only prevent default if we're sure it's not part of scrolling
+                    if (!touchMoved) {
+                        e.preventDefault();
+                        toggleFlip();
+                    }
                 });
                 
             } else {

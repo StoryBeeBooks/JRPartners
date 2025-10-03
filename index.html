@@ -196,6 +196,85 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonials-header">
+                <span class="section-label">CLIENT TESTIMONIALS</span>
+                <h2>WHAT OUR CLIENTS<br>SAY ABOUT US</h2>
+                <p class="section-subtitle">Real feedback from satisfied customers who trusted us with their projects</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <span>★★★★★</span>
+                    </div>
+                    <p class="testimonial-text">"JRPartners transformed our kitchen beyond our expectations. Their stone fabrication work is absolutely stunning, and the custom cabinetry is flawless. Professional team, on-time delivery, and exceptional quality."</p>
+                    <div class="testimonial-author">
+                        <strong>Sarah Mitchell</strong>
+                        <span>Luxury Home Owner, Toronto</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <span>★★★★★</span>
+                    </div>
+                    <p class="testimonial-text">"We've used JRPartners for multiple commercial projects. Their doors & windows division delivered outstanding results for our office building. Reliable, professional, and always exceed expectations."</p>
+                    <div class="testimonial-author">
+                        <strong>Michael Chen</strong>
+                        <span>Property Developer, Markham</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <span>★★★★★</span>
+                    </div>
+                    <p class="testimonial-text">"The interior design team at JRPartners created our dream home. From flooring to stone retail, everything was coordinated perfectly. Their attention to detail is unmatched."</p>
+                    <div class="testimonial-author">
+                        <strong>Jennifer Rodriguez</strong>
+                        <span>Homeowner, Vaughan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Logos Section -->
+    <section class="client-logos">
+        <div class="container">
+            <h3>TRUSTED BY LEADING COMPANIES</h3>
+            <div class="logos-grid">
+                <div class="logo-item">
+                    <div class="logo-placeholder">LUXURY HOMES</div>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">COMMERCIAL BUILDERS</div>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">DESIGN STUDIOS</div>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">PROPERTY DEVELOPERS</div>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">CONSTRUCTION COMPANIES</div>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">ARCHITECTURE FIRMS</div>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">INTERIOR DESIGNERS</div>
+                </div>
+                <div class="logo-item">
+                    <div class="logo-placeholder">REAL ESTATE AGENCIES</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Image Section -->
     <section class="image-section">
         <div class="full-width-image">
@@ -393,6 +472,56 @@
     
     // Make function globally available
     window.closeCookieConsent = closeCookieConsent;
+    
+    // Testimonials functionality
+    function initTestimonials() {
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        let currentIndex = 0;
+        
+        if (testimonialCards.length === 0) return;
+        
+        // Add entrance animation
+        testimonialCards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                card.style.transition = 'all 0.6s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 200);
+        });
+        
+        // Add subtle highlighting effect
+        function highlightTestimonial(index) {
+            testimonialCards.forEach((card, i) => {
+                if (i === index) {
+                    card.style.background = 'rgba(201, 169, 97, 0.08)';
+                    card.style.borderColor = '#c9a961';
+                } else {
+                    card.style.background = 'rgba(255, 255, 255, 0.03)';
+                    card.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                }
+            });
+        }
+        
+        // Auto-highlight testimonials
+        function rotateHighlight() {
+            highlightTestimonial(currentIndex);
+            currentIndex = (currentIndex + 1) % testimonialCards.length;
+        }
+        
+        // Start rotation
+        rotateHighlight();
+        setInterval(rotateHighlight, 4000); // Change every 4 seconds
+    }
+    
+    // Initialize testimonials when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTestimonials);
+    } else {
+        initTestimonials();
+    }
     </script>
 </body>
 </html>

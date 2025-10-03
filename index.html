@@ -473,6 +473,137 @@
     // Make function globally available
     window.closeCookieConsent = closeCookieConsent;
     
+    // Parallax scrolling effect
+    function initParallax() {
+        const heroImage = document.querySelector('.hero-image img');
+        const navbar = document.querySelector('.navbar');
+        
+        if (!heroImage) return;
+        
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.3;
+            
+            // Apply parallax effect to hero image
+            heroImage.style.transform = `translateY(${rate}px)`;
+            
+            // Enhanced navbar on scroll
+            if (scrolled > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+        
+        // Throttled scroll handler for better performance
+        let ticking = false;
+        function handleScroll() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    updateParallax();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', handleScroll);
+        updateParallax(); // Initial call
+    }
+    
+    // Scroll-triggered animations
+    function initScrollAnimations() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+        
+        // Add scroll reveal classes to elements and observe them
+        const elementsToReveal = [
+            '.companies h2',
+            '.companies .section-subtitle',
+            '.flip-card',
+            '.about .section-label',
+            '.about h2',
+            '.about p',
+            '.stat-item',
+            '.testimonials-header',
+            '.testimonial-card',
+            '.client-logos h3',
+            '.logo-item'
+        ];
+        
+        elementsToReveal.forEach((selector, index) => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach((element, elementIndex) => {
+                // Add appropriate reveal class based on element type
+                if (selector.includes('flip-card')) {
+                    element.classList.add('scroll-reveal-scale');
+                } else if (elementIndex % 2 === 0) {
+                    element.classList.add('scroll-reveal-left');
+                } else {
+                    element.classList.add('scroll-reveal-right');
+                }
+                
+                observer.observe(element);
+            });
+        });
+        
+        // Special handling for stats
+        const stats = document.querySelectorAll('.stat-item');
+        stats.forEach((stat, index) => {
+            stat.classList.add('scroll-reveal');
+            observer.observe(stat);
+        });
+    }
+    
+    // Enhanced hover effects
+    function initAdvancedHoverEffects() {
+        // Magnetic effect for buttons
+        const magneticElements = document.querySelectorAll('.learn-more-btn, .logo-item');
+        
+        magneticElements.forEach(element => {
+            element.addEventListener('mousemove', (e) => {
+                const rect = element.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                element.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                element.style.transform = 'translate(0, 0)';
+            });
+        });
+        
+        // Enhanced flip card interactions
+        const flipCards = document.querySelectorAll('.flip-card');
+        flipCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width;
+                const y = (e.clientY - rect.top) / rect.height;
+                
+                const rotateX = (y - 0.5) * 10;
+                const rotateY = (x - 0.5) * -10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+            });
+        });
+    }
+    
     // Testimonials functionality
     function initTestimonials() {
         const testimonialCards = document.querySelectorAll('.testimonial-card');
@@ -516,11 +647,18 @@
         setInterval(rotateHighlight, 4000); // Change every 4 seconds
     }
     
-    // Initialize testimonials when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initTestimonials);
-    } else {
+    // Initialize all effects when DOM is ready
+    function initAllEffects() {
+        initParallax();
+        initScrollAnimations();
+        initAdvancedHoverEffects();
         initTestimonials();
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAllEffects);
+    } else {
+        initAllEffects();
     }
     </script>
 </body>

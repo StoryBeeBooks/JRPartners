@@ -8,6 +8,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-container">
+            <div class="loading-logo">
+                <div class="logo-icon-large">JR</div>
+                <div class="logo-text-large">JRPARTNERS</div>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+            </div>
+            <div class="loading-text">Loading Premium Experience...</div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+    <!-- Page Transition Overlay -->
+    <div class="page-transition" id="pageTransition"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -473,6 +495,142 @@
     // Make function globally available
     window.closeCookieConsent = closeCookieConsent;
     
+    // Loading Screen Animation
+    function initLoadingScreen() {
+        const loadingScreen = document.getElementById('loadingScreen');
+        const loadingProgress = document.getElementById('loadingProgress');
+        
+        if (!loadingScreen || !loadingProgress) return;
+        
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += Math.random() * 15 + 5;
+            
+            if (progress >= 100) {
+                progress = 100;
+                loadingProgress.style.width = '100%';
+                
+                setTimeout(() => {
+                    loadingScreen.classList.add('hidden');
+                    document.body.style.overflow = 'visible';
+                }, 500);
+                
+                clearInterval(interval);
+            } else {
+                loadingProgress.style.width = progress + '%';
+            }
+        }, 200);
+        
+        // Hide loading screen on page load complete
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+                document.body.style.overflow = 'visible';
+            }, 1500);
+        });
+    }
+    
+    // Scroll Progress Indicator
+    function initScrollProgress() {
+        const scrollProgressBar = document.getElementById('scrollProgressBar');
+        
+        if (!scrollProgressBar) return;
+        
+        function updateScrollProgress() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            
+            scrollProgressBar.style.width = Math.min(scrollPercent, 100) + '%';
+        }
+        
+        let ticking = false;
+        function handleScrollProgress() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    updateScrollProgress();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', handleScrollProgress);
+        updateScrollProgress();
+    }
+    
+    // Page Transitions
+    function initPageTransitions() {
+        const pageTransition = document.getElementById('pageTransition');
+        
+        if (!pageTransition) return;
+        
+        // Smooth scroll to sections
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    pageTransition.classList.add('active');
+                    
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        setTimeout(() => {
+                            pageTransition.classList.remove('active');
+                        }, 300);
+                    }, 300);
+                }
+            });
+        });
+        
+        // Add section transition effects
+        const sections = document.querySelectorAll('section');
+        sections.forEach((section, index) => {
+            section.classList.add('section-transition');
+            
+            // Stagger the initial appearance
+            setTimeout(() => {
+                section.classList.add('visible');
+            }, index * 200);
+        });
+    }
+    
+    // Enhanced Section Reveals
+    function initSectionReveals() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Trigger any child animations
+                    const childElements = entry.target.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
+                    childElements.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.classList.add('revealed');
+                        }, index * 100);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+    }
+    
     // Parallax scrolling effect
     function initParallax() {
         const heroImage = document.querySelector('.hero-image img');
@@ -649,6 +807,10 @@
     
     // Initialize all effects when DOM is ready
     function initAllEffects() {
+        initLoadingScreen();
+        initScrollProgress();
+        initPageTransitions();
+        initSectionReveals();
         initParallax();
         initScrollAnimations();
         initAdvancedHoverEffects();

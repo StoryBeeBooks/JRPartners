@@ -721,7 +721,7 @@ body {
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
@@ -832,14 +832,22 @@ body {
 }
 
 /* Testimonials Responsive */
+@media (max-width: 1200px) {
+    .testimonials-grid {
+        gap: 30px;
+        max-width: 1000px;
+    }
+}
+
 @media (max-width: 1024px) {
     .testimonials {
         padding: 80px 30px;
     }
     
     .testimonials-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: 1fr;
         gap: 30px;
+        max-width: 600px;
     }
     
     .client-logos {
@@ -864,6 +872,7 @@ body {
     .testimonials-grid {
         grid-template-columns: 1fr;
         gap: 25px;
+        max-width: 500px;
     }
     
     .testimonial-card {
@@ -1480,7 +1489,11 @@ html {
     font-size: 32px;
     font-weight: bold;
     color: #c9a961;
-    animation: logoRotate 3s ease-in-out infinite;
+    animation: logoRotate 3s linear infinite;
+    -webkit-animation: logoRotate 3s linear infinite;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
 }
 
 .logo-text-large {
@@ -1489,6 +1502,8 @@ html {
     letter-spacing: 3px;
     color: #ffffff;
     animation: textGlow 2s ease-in-out infinite alternate;
+    -webkit-animation: textGlow 2s ease-in-out infinite alternate;
+    will-change: opacity, text-shadow;
 }
 
 .loading-bar {
@@ -1507,6 +1522,8 @@ html {
     width: 0%;
     border-radius: 2px;
     animation: loadingBar 3s ease-in-out forwards, gradientMove 2s linear infinite;
+    -webkit-animation: loadingBar 3s ease-in-out forwards, gradientMove 2s linear infinite;
+    will-change: width, background-position;
 }
 
 .loading-text {
@@ -1557,18 +1574,63 @@ html {
     pointer-events: all;
 }
 
-/* Animations */
+/* Animations - iOS Compatible */
 @keyframes loadingPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    0%, 100% { 
+        transform: scale(1) translateZ(0);
+        -webkit-transform: scale(1) translateZ(0);
+    }
+    50% { 
+        transform: scale(1.05) translateZ(0);
+        -webkit-transform: scale(1.05) translateZ(0);
+    }
+}
+
+@-webkit-keyframes loadingPulse {
+    0%, 100% { 
+        transform: scale(1) translateZ(0);
+        -webkit-transform: scale(1) translateZ(0);
+    }
+    50% { 
+        transform: scale(1.05) translateZ(0);
+        -webkit-transform: scale(1.05) translateZ(0);
+    }
 }
 
 @keyframes logoRotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% { 
+        transform: rotate(0deg) translateZ(0);
+        -webkit-transform: rotate(0deg) translateZ(0);
+    }
+    100% { 
+        transform: rotate(360deg) translateZ(0);
+        -webkit-transform: rotate(360deg) translateZ(0);
+    }
+}
+
+@-webkit-keyframes logoRotate {
+    0% { 
+        transform: rotate(0deg) translateZ(0);
+        -webkit-transform: rotate(0deg) translateZ(0);
+    }
+    100% { 
+        transform: rotate(360deg) translateZ(0);
+        -webkit-transform: rotate(360deg) translateZ(0);
+    }
 }
 
 @keyframes textGlow {
+    0% { 
+        text-shadow: 0 0 5px rgba(201, 169, 97, 0.5);
+        opacity: 0.8;
+    }
+    100% { 
+        text-shadow: 0 0 20px rgba(201, 169, 97, 0.8), 0 0 30px rgba(201, 169, 97, 0.4);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes textGlow {
     0% { 
         text-shadow: 0 0 5px rgba(201, 169, 97, 0.5);
         opacity: 0.8;
@@ -1584,7 +1646,18 @@ html {
     100% { width: 100%; }
 }
 
+@-webkit-keyframes loadingBar {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
 @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@-webkit-keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }

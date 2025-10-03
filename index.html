@@ -3,7 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JRPartners - Premium Home Solutions & Enterprise Services</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>JRPartners - Premium Home Solutions & Enterprise Services | Toronto</title>
+    <meta name="description" content="JRPartners delivers exceptional home solutions across 6 specialized divisions: stone fabrication, custom cabinetry, interior design, doors & windows, flooring, and stone retail. Transform your space with Toronto's trusted enterprise group - 1000+ projects completed.">
+    <meta name="keywords" content="JRPartners, home renovation Toronto, stone fabrication, custom kitchen cabinets, interior design, doors windows installation, flooring company, stone retail, home solutions, Toronto contractors, luxury homes, commercial builders">
+    <meta name="author" content="JRPartners Enterprise Group">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="geo.region" content="CA-ON">
+    <meta name="geo.placename" content="Toronto, Ontario">
+    <meta name="geo.position" content="43.651070;-79.347015">
+    <meta name="ICBM" content="43.651070, -79.347015">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="JRPartners - Premium Home Solutions & Enterprise Services">
+    <meta property="og:description" content="Transform your space with Toronto's trusted enterprise group. 6 specialized divisions delivering exceptional home solutions from stone fabrication to interior design. 1000+ projects completed.">
+    <meta property="og:url" content="https://storybeeBooks.github.io/JRPartners/">
+    <meta property="og:site_name" content="JRPartners">
+    <meta property="og:image" content="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartners1.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_CA">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JRPartners - Premium Home Solutions & Enterprise Services">
+    <meta name="twitter:description" content="Transform your space with Toronto's trusted enterprise group. 6 specialized divisions delivering exceptional home solutions.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartners1.jpg">
+    
+    <!-- Business/Local SEO -->
+    <meta name="business:contact_data:street_address" content="Unit 2 - 1300 Alness Street">
+    <meta name="business:contact_data:locality" content="Toronto">
+    <meta name="business:contact_data:region" content="Ontario">
+    <meta name="business:contact_data:postal_code" content="L4K 2W6">
+    <meta name="business:contact_data:country_name" content="Canada">
+    <meta name="business:contact_data:phone_number" content="+1-905-761-7333">
+    <meta name="business:contact_data:email" content="support@jrpartners.ca">
+    
+    <!-- Technical SEO -->
+    <link rel="canonical" href="https://storybeeBooks.github.io/JRPartners/">
+    <meta name="theme-color" content="#c9a961">
+    <meta name="msapplication-TileColor" content="#c9a961">
+    
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -495,39 +538,76 @@
     // Make function globally available
     window.closeCookieConsent = closeCookieConsent;
     
-    // Loading Screen Animation
+    // Loading Screen Animation - iOS Compatible
     function initLoadingScreen() {
         const loadingScreen = document.getElementById('loadingScreen');
         const loadingProgress = document.getElementById('loadingProgress');
         
         if (!loadingScreen || !loadingProgress) return;
         
+        // Force hardware acceleration for iOS
+        loadingScreen.style.transform = 'translateZ(0)';
+        loadingScreen.style.webkitTransform = 'translateZ(0)';
+        
         let progress = 0;
-        const interval = setInterval(() => {
-            progress += Math.random() * 15 + 5;
+        let isComplete = false;
+        
+        const updateProgress = () => {
+            if (isComplete) return;
+            
+            progress += Math.random() * 12 + 8;
             
             if (progress >= 100) {
                 progress = 100;
+                isComplete = true;
                 loadingProgress.style.width = '100%';
                 
-                setTimeout(() => {
-                    loadingScreen.classList.add('hidden');
-                    document.body.style.overflow = 'visible';
-                }, 500);
-                
-                clearInterval(interval);
+                // Use requestAnimationFrame for smoother transitions on iOS
+                requestAnimationFrame(() => {
+                    setTimeout(() => {
+                        hideLoadingScreen();
+                    }, 300);
+                });
             } else {
                 loadingProgress.style.width = progress + '%';
+                setTimeout(updateProgress, 150);
             }
-        }, 200);
+        };
+        
+        function hideLoadingScreen() {
+            loadingScreen.classList.add('hidden');
+            document.body.style.overflow = 'visible';
+            document.body.style.overflowY = 'auto';
+            
+            // Additional iOS fix
+            setTimeout(() => {
+                if (loadingScreen.parentNode) {
+                    loadingScreen.style.display = 'none';
+                }
+            }, 800);
+        }
+        
+        // Start progress animation
+        setTimeout(updateProgress, 100);
+        
+        // Fallback: Hide loading screen after maximum time
+        setTimeout(() => {
+            if (!isComplete) {
+                hideLoadingScreen();
+            }
+        }, 4000);
         
         // Hide loading screen on page load complete
         window.addEventListener('load', () => {
             setTimeout(() => {
-                loadingScreen.classList.add('hidden');
-                document.body.style.overflow = 'visible';
-            }, 1500);
+                hideLoadingScreen();
+            }, 1000);
         });
+        
+        // Additional iOS/touch device support
+        document.addEventListener('touchstart', () => {
+            // Trigger hardware acceleration on first touch
+        }, { once: true, passive: true });
     }
     
     // Scroll Progress Indicator

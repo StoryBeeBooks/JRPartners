@@ -257,5 +257,103 @@
             </div>
         </div>
     </footer>
+
+    <script>
+    // Enhanced flip card functionality - optimized for mobile touch and desktop hover
+    document.addEventListener('DOMContentLoaded', function() {
+        const flipCards = document.querySelectorAll('.flip-card');
+        
+        flipCards.forEach(card => {
+            let isFlipped = false;
+            const inner = card.querySelector('.flip-card-inner');
+            let touchStarted = false;
+            
+            // Check if device supports hover (desktop/laptop)
+            const supportsHover = window.matchMedia('(hover: hover)').matches;
+            
+            if (!supportsHover) {
+                // Mobile/touch devices - optimized touch handling
+                card.addEventListener('touchstart', function(e) {
+                    // Don't flip if touching a button or link
+                    if (e.target.tagName === 'A' || e.target.closest('a') || 
+                        e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+                        return;
+                    }
+                    touchStarted = true;
+                    e.preventDefault();
+                }, { passive: false });
+                
+                card.addEventListener('touchend', function(e) {
+                    // Don't flip if touching a button or link
+                    if (e.target.tagName === 'A' || e.target.closest('a') || 
+                        e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+                        return;
+                    }
+                    
+                    if (touchStarted) {
+                        e.preventDefault();
+                        toggleFlip();
+                        touchStarted = false;
+                    }
+                }, { passive: false });
+                
+                // Fallback click event for mobile browsers
+                card.addEventListener('click', function(e) {
+                    // Don't flip if clicking on a button or link
+                    if (e.target.tagName === 'A' || e.target.closest('a') || 
+                        e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+                        return;
+                    }
+                    e.preventDefault();
+                    // Small delay to prevent double-firing with touch events
+                    setTimeout(() => {
+                        if (!touchStarted) {
+                            toggleFlip();
+                        }
+                    }, 10);
+                });
+                
+            } else {
+                // Desktop devices - hover + click functionality
+                card.addEventListener('click', function(e) {
+                    // Don't flip if clicking on a button or link
+                    if (e.target.tagName === 'A' || e.target.closest('a') || 
+                        e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+                        return;
+                    }
+                    e.preventDefault();
+                    toggleFlip();
+                });
+                
+                // Reset on mouse leave if not permanently flipped
+                card.addEventListener('mouseleave', function() {
+                    if (!isFlipped) {
+                        inner.style.transform = 'rotateY(0deg)';
+                    }
+                });
+            }
+            
+            function toggleFlip() {
+                if (isFlipped) {
+                    inner.style.transform = 'rotateY(0deg)';
+                    inner.style.zIndex = '1';
+                    isFlipped = false;
+                } else {
+                    inner.style.transform = 'rotateY(180deg)';
+                    inner.style.zIndex = '2';
+                    isFlipped = true;
+                }
+            }
+        });
+        
+        // Ensure buttons and links are always clickable
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A' || e.target.closest('a') || 
+                e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+                e.stopPropagation();
+            }
+        }, true);
+    });
+    </script>
 </body>
 </html>

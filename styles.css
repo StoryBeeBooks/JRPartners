@@ -218,8 +218,35 @@ body {
     cursor: pointer;
 }
 
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
+.flip-card {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Ensure buttons and links are always accessible */
+.learn-more-btn, .company-link {
+    pointer-events: auto;
+    touch-action: manipulation;
+    position: relative;
+    z-index: 10;
+}
+
+/* Better mobile button styling */
+@media (max-width: 768px) {
+    .learn-more-btn, .company-link {
+        min-height: 44px;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Desktop hover functionality */
+@media (hover: hover) {
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
 }
 
 .flip-card-front, .flip-card-back {

@@ -152,29 +152,37 @@ body.loading {
     padding: 0;
 }
 
-/* Hero section - title only */
+/* Hero section - title and wireframe together */
 .hero {
     position: relative;
-    min-height: auto;
+    min-height: 100vh;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     overflow: hidden;
-    padding-top: calc(76px + 49px); /* navbar + spacing */
-    padding-bottom: 60px; /* space after title */
 }
 
-/* Wireframe Scene Section - New independent section */
-.wireframe-scene {
-    position: relative;
+.hero-canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
-    height: 700px; /* Give it generous height */
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    overflow: hidden;
+    height: 100%;
 }
 
-.wireframe-scene canvas {
+.hero-canvas-container canvas {
     width: 100%;
     height: 100%;
     display: block;
+}
+
+/* Wireframe Scene Section - Remove this, no longer needed */
+.wireframe-scene {
+    display: none;
+}
+
+.wireframe-scene canvas {
+    display: none;
 }
 
 #wireframeCanvas {
@@ -185,8 +193,8 @@ body.loading {
 }
 
 .hero-title-top {
-    position: relative; /* Changed from absolute to flow naturally */
-    top: 0;
+    position: absolute;
+    top: calc(76px + 49px); /* navbar height (76px) + spacing (49px) */
     left: 0;
     right: 0;
     z-index: 10;
@@ -239,30 +247,26 @@ body.loading {
 /* Hero Responsive Styles */
 @media (max-width: 1024px) {
     .hero {
-        padding-top: calc(76px + 24px); /* navbar + 24px spacing */
-        padding-bottom: 50px;
+        min-height: 100vh;
     }
 
     .hero-title-top {
+        top: calc(76px + 24px); /* navbar + 24px spacing */
         padding: 0 60px;
     }
     
     .hero-title-top h1 {
         font-size: 3.3rem;
     }
-    
-    .wireframe-scene {
-        height: 650px;
-    }
 }
 
 @media (max-width: 768px) {
     .hero {
-        padding-top: calc(76px + 14px); /* navbar + 14px spacing */
-        padding-bottom: 40px;
+        min-height: 100vh;
     }
 
     .hero-title-top {
+        top: calc(76px + 14px); /* navbar + 14px spacing */
         padding: 0 40px;
     }
 
@@ -271,29 +275,21 @@ body.loading {
         line-height: 1.2;
         letter-spacing: 0;
     }
-    
-    .wireframe-scene {
-        height: 600px;
-    }
 }
 
 @media (max-width: 480px) {
     .hero {
-        padding-top: calc(76px + 10px); /* navbar + 10px spacing */
-        padding-bottom: 30px;
+        min-height: 100vh;
     }
 
     .hero-title-top {
+        top: calc(76px + 10px); /* navbar + 10px spacing */
         padding: 0 20px;
     }
     
     .hero-title-top h1 {
         font-size: 1.5rem;
         line-height: 1.25;
-    }
-    
-    .wireframe-scene {
-        height: 550px;
     }
 }
 

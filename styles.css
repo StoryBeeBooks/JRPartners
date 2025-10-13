@@ -154,10 +154,14 @@ body.loading {
 
 .hero-canvas-container {
     position: absolute;
-    top: 0;
+    /* Scene starts 20px below the title
+       Title is at calc(76px + 44px) = 120px, title height ~150px
+       So scene starts at: 120px + 150px + 20px = 290px */
+    top: calc(76px + 44px + 150px + 20px); /* navbar + spacing + title height + gap */
     left: 0;
     width: 100%;
-    height: 100%;
+    /* Scene fills rest of hero section */
+    bottom: 0;
 }
 
 #wireframeCanvas {
@@ -229,6 +233,12 @@ body.loading {
     .hero-title-top h1 {
         font-size: 3.3rem;
     }
+    
+    .hero-canvas-container {
+        /* Title at 100px, height ~130px, gap 20px = start at 250px */
+        top: calc(76px + 24px + 130px + 20px);
+        bottom: 0; /* Fill to bottom of hero */
+    }
 }
 
 @media (max-width: 768px) {
@@ -246,6 +256,12 @@ body.loading {
         line-height: 1.2;
         letter-spacing: 0;
     }
+    
+    .hero-canvas-container {
+        /* Title at 90px, height ~95px, gap 20px = start at 205px */
+        top: calc(76px + 14px + 95px + 20px);
+        bottom: 0; /* Fill to bottom of hero */
+    }
 }
 
 @media (max-width: 480px) {
@@ -258,18 +274,25 @@ body.loading {
         font-size: 1.5rem;
         line-height: 1.25;
     }
+    
+    .hero-canvas-container {
+        /* Title at 86px, height ~75px, gap 20px = start at 181px */
+        top: calc(76px + 10px + 75px + 20px);
+        bottom: 0; /* Fill to bottom of hero */
+    }
 }
 
-/* Interactive Company Names Text Wall - Bottom Section */
+/* Company Names Carousel - Fixed at top of Companies Section */
 .company-names-container {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
+    position: relative;
     width: 100%;
-    height: 50px;
+    height: 60px;
+    background: #0a0a0a;
+    border-top: 1px solid rgba(200, 212, 224, 0.05);
+    border-bottom: 1px solid rgba(200, 212, 224, 0.05);
     pointer-events: none;
     overflow: hidden;
-    z-index: 1;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -332,8 +355,7 @@ body.loading {
 
 @media (max-width: 1024px) {
     .company-names-container {
-        bottom: 40px;
-        height: 45px;
+        height: 55px;
     }
     
     .company-names-track {
@@ -347,8 +369,7 @@ body.loading {
 
 @media (max-width: 768px) {
     .company-names-container {
-        bottom: 140px;
-        height: 40px;
+        height: 50px;
     }
     
     .company-names-track {
@@ -363,8 +384,7 @@ body.loading {
 
 @media (max-width: 480px) {
     .company-names-container {
-        bottom: 120px;
-        height: 35px;
+        height: 45px;
     }
     
     .company-names-track {

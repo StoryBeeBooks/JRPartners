@@ -64,12 +64,12 @@ body.loading {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    border-bottom: 1px solid rgba(200, 212, 224, 0.08);
+    border-bottom: 1px solid rgba(200, 212, 224, 0.1);
     z-index: 1000;
-    padding: 18px 0;
+    padding: 20px 0;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -141,92 +141,240 @@ body.loading {
 /* Hero Section */
 .hero {
     min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(5, 5, 5, 0.3) 50%, rgba(0, 0, 0, 0.2) 100%);
-    margin-top: 60px;
+    background: #0a0a0a;
+    margin-top: 0;
     overflow: hidden;
-    padding: 0 40px;
+    padding: 0;
 }
 
-.hero-image {
+.hero-canvas-container {
     position: absolute;
-    top: -10%;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 120%;
-    z-index: 1;
-    will-change: transform;
+    height: 100%;
 }
 
-.hero-image img {
+#wireframeCanvas {
+    display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    filter: brightness(0.6);
-    transition: transform 0.1s ease-out;
+    cursor: move;
 }
 
-.hero-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 60px;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    z-index: 2;
+.hero-title-top {
+    position: absolute;
+    top: calc(76px + 44px); /* navbar height (76px) + spacing (44px) */
+    left: 0;
+    right: 0;
+    z-index: 10;
+    text-align: center;
+    padding: 0 80px;
+    animation: fadeInDown 1.2s ease-out 0.3s both;
 }
 
-.hero-text h1 {
+.hero-title-top h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 4.2rem;
+    font-size: 4rem;
     font-weight: 400;
-    line-height: 1.05;
-    margin-bottom: 32px;
-    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0;
+    letter-spacing: 0.01em;
     color: #ffffff;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    text-shadow: 
+        0 0 80px rgba(0, 0, 0, 0.95),
+        0 6px 40px rgba(0, 0, 0, 0.9), 
+        0 3px 20px rgba(0, 0, 0, 0.85);
 }
 
-.hero-text p {
+.hero-subtitle-bottom {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    text-align: center;
+    padding: 0 80px;
+    animation: fadeInUp 1.2s ease-out 0.5s both;
+}
+
+.hero-subtitle-bottom p {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 400;
-    opacity: 0.95;
-    margin-bottom: 50px;
-    max-width: 580px;
-    line-height: 1.7;
-    letter-spacing: 0.02em;
-    color: rgba(255, 255, 255, 0.95);
+    opacity: 0.92;
+    margin: 0 auto;
+    line-height: 1.75;
+    letter-spacing: 0.03em;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 
+        0 0 50px rgba(0, 0, 0, 0.95),
+        0 4px 25px rgba(0, 0, 0, 0.9),
+        0 2px 12px rgba(0, 0, 0, 0.85);
+    max-width: 950px;
 }
 
-.cta-button {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    padding: 15px 30px;
-    font-size: 14px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
+/* Hero Responsive Styles */
+@media (max-width: 1024px) {
+    .hero-title-top {
+        top: calc(76px + 24px); /* navbar + 24px spacing */
+        padding: 0 60px;
+    }
+    
+    .hero-title-top h1 {
+        font-size: 3.3rem;
+    }
 }
 
-.cta-button:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+@media (max-width: 768px) {
+    .hero {
+        min-height: 100vh;
+    }
+
+    .hero-title-top {
+        top: calc(76px + 14px); /* navbar + 14px spacing */
+        padding: 0 40px;
+    }
+
+    .hero-title-top h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+        letter-spacing: 0;
+    }
 }
 
-.hero-side h2 {
-    font-size: 2.5rem;
+@media (max-width: 480px) {
+    .hero-title-top {
+        top: calc(76px + 10px); /* navbar + 10px spacing */
+        padding: 0 20px;
+    }
+    
+    .hero-title-top h1 {
+        font-size: 1.5rem;
+        line-height: 1.25;
+    }
+}
+
+/* Interactive Company Names Text Wall - Bottom Section */
+.company-names-container {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.company-names-track {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    white-space: nowrap;
+    animation: scrollCompanies 40s linear infinite;
+}
+
+.company-name {
+    color: var(--gold);
     font-weight: 300;
-    line-height: 1.2;
-    text-align: right;
-    opacity: 0.8;
+    opacity: 0.15;
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 13px;
+    transition: opacity 0.8s ease;
+    flex-shrink: 0;
+}
+
+@keyframes scrollCompanies {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Brightness gradient effect */
+.company-names-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(to right, #000000 0%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.company-names-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(to left, #000000 0%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+    .company-names-container {
+        bottom: 40px;
+        height: 45px;
+    }
+    
+    .company-names-track {
+        gap: 60px;
+    }
+    
+    .company-name {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 768px) {
+    .company-names-container {
+        bottom: 140px;
+        height: 40px;
+    }
+    
+    .company-names-track {
+        gap: 50px;
+    }
+    
+    .company-name {
+        opacity: 0.18;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 480px) {
+    .company-names-container {
+        bottom: 120px;
+        height: 35px;
+    }
+    
+    .company-names-track {
+        gap: 35px;
+    }
+    
+    .company-name {
+        font-size: 7px;
+        letter-spacing: 0.15em;
+    }
 }
 
 /* Companies Section */
@@ -2329,8 +2477,7 @@ html {
 /* Performance optimizations */
 .flip-card,
 .testimonial-card,
-.logo-item,
-.hero-image {
+.logo-item {
     will-change: transform;
 }
 
@@ -2480,6 +2627,39 @@ html {
 }
 
 /* Animations - iOS Compatible */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate(-40px, -50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes loadingPulse {
     0%, 100% { 
         transform: scale(1) translateZ(0);

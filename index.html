@@ -87,17 +87,12 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>PREMIUM HOME<br>SOLUTIONS &<br>ENTERPRISE SERVICES</h1>
-                <p>Creating exceptional spaces with premium stone fabrication, custom cabinetry, and comprehensive home solutions from design to installation.</p>
+        <div class="hero-canvas-container">
+            <canvas id="wireframeCanvas"></canvas>
+            <div class="hero-title-top">
+                <h1>PREMIUM HOME SOLUTIONS<br>&amp; ENTERPRISE SERVICES</h1>
             </div>
-            <div class="hero-side">
-                <h2>EXCELLENCE<br>IN EVERY<br>PROJECT</h2>
-            </div>
-        </div>
-        <div class="hero-image">
-            <img src="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartners1.jpg" alt="Premium Home Solutions">
+            <div class="company-names-container" id="companyNames"></div>
         </div>
     </section>
 
@@ -907,18 +902,14 @@
     }
     
     // Parallax scrolling effect
+    // Parallax scrolling effect
     function initParallax() {
-        const heroImage = document.querySelector('.hero-image img');
         const navbar = document.querySelector('.navbar');
         
-        if (!heroImage) return;
+        if (!navbar) return;
         
         function updateParallax() {
             const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.3;
-            
-            // Apply parallax effect to hero image
-            heroImage.style.transform = `translateY(${rate}px)`;
             
             // Enhanced navbar on scroll
             if (scrolled > 100) {
@@ -1300,6 +1291,8 @@
 
     // Initialize all effects when DOM is ready
     function initAllEffects() {
+        initWireframeInterior();
+        initCompanyNames();
         initLoadingScreen();
         initScrollProgress();
         initPageTransitions();
@@ -1309,6 +1302,398 @@
         initAdvancedHoverEffects();
         initTestimonials();
         initProcessAnimations();
+    }
+
+    // Rotating Company Names Carousel with Brightness Effect
+    function initCompanyNames() {
+        const container = document.getElementById('companyNames');
+        if (!container) return;
+
+        const companies = [
+            'HILTON',
+            'MARRIOTT',
+            'MENKES',
+            'WYNDHAM',
+            'INTERCONTINENTAL',
+            'CHOICE',
+            'MATTAMY',
+            'CONCORD',
+            'TRIDEL',
+            'DANIELS'
+        ];
+
+        // Create seamless scrolling track
+        function createCarousel() {
+            container.innerHTML = '';
+
+            const track = document.createElement('div');
+            track.className = 'company-names-track';
+
+            // Duplicate companies array for seamless loop
+            const doubledCompanies = [...companies, ...companies];
+
+            doubledCompanies.forEach(company => {
+                const element = document.createElement('div');
+                element.className = 'company-name';
+                element.textContent = company;
+                track.appendChild(element);
+            });
+
+            container.appendChild(track);
+
+            // Apply brightness gradient effect based on position
+            applyBrightnessEffect();
+        }
+
+        // Dynamic brightness based on horizontal position
+        function applyBrightnessEffect() {
+            const track = container.querySelector('.company-names-track');
+            if (!track) return;
+
+            const elements = track.querySelectorAll('.company-name');
+
+            function updateBrightness() {
+                const containerRect = container.getBoundingClientRect();
+                const centerX = containerRect.left + containerRect.width / 2;
+                const fadeRange = containerRect.width * 0.35;
+
+                elements.forEach(element => {
+                    const rect = element.getBoundingClientRect();
+                    const elementCenterX = rect.left + rect.width / 2;
+                    const distanceFromCenter = Math.abs(elementCenterX - centerX);
+
+                    // Calculate brightness: max in center, fade at edges
+                    let brightness;
+                    if (distanceFromCenter < fadeRange) {
+                        brightness = 1 - (distanceFromCenter / fadeRange) * 0.7;
+                    } else {
+                        brightness = 0.3;
+                    }
+
+                    // Apply opacity based on brightness
+                    element.style.opacity = brightness * 0.35;
+                });
+
+                requestAnimationFrame(updateBrightness);
+            }
+
+            updateBrightness();
+        }
+
+        // Initial creation
+        createCarousel();
+
+        // Recreate on resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                createCarousel();
+            }, 300);
+        });
+    }
+
+    // Interactive Wireframe Interior Scene
+    function initWireframeInterior() {
+        const canvas = document.getElementById('wireframeCanvas');
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        let width, height, centerX, centerY;
+        let animationProgress = 0;
+        let mouseX = 0, mouseY = 0;
+        let targetMouseX = 0, targetMouseY = 0;
+
+        // Set canvas size
+        function resizeCanvas() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+            centerX = width / 2;
+            
+            // Adjust vertical centering based on viewport size
+            // On mobile, shift scene down significantly to fill the space better
+            if (width <= 480) {
+                // Small mobile: title at 50px, companies at 120px from bottom
+                // Shift scene down to fill the large middle area
+                centerY = height / 2 + 40;
+            } else if (width <= 768) {
+                // Mobile: title at 60px, companies at 140px from bottom
+                // Shift down more to fill gap
+                centerY = height / 2 + 50;
+            } else if (width <= 1024) {
+                // Tablet: balanced spacing
+                centerY = height / 2 + 20;
+            } else {
+                // Desktop: balanced between title (100px) and companies (50px)
+                centerY = height / 2 + 25;
+            }
+        }
+        resizeCanvas();
+
+        // Mouse tracking with smooth interpolation
+        canvas.addEventListener('mousemove', (e) => {
+            targetMouseX = (e.clientX / width - 0.5) * 2;
+            targetMouseY = (e.clientY / height - 0.5) * 2;
+        });
+
+        canvas.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 0) {
+                targetMouseX = (e.touches[0].clientX / width - 0.5) * 2;
+                targetMouseY = (e.touches[0].clientY / height - 0.5) * 2;
+            }
+        }, { passive: true });
+
+        // 3D to 2D projection
+        function project3D(x, y, z, rotX, rotY) {
+            // Apply rotation
+            const cosX = Math.cos(rotX);
+            const sinX = Math.sin(rotX);
+            const cosY = Math.cos(rotY);
+            const sinY = Math.sin(rotY);
+
+            // Rotate around Y axis
+            let tempZ = z * cosY - x * sinY;
+            let tempX = z * sinY + x * cosY;
+            z = tempZ;
+            x = tempX;
+
+            // Rotate around X axis
+            let tempY = y * cosX - z * sinX;
+            tempZ = y * sinX + z * cosX;
+            y = tempY;
+            z = tempZ;
+
+            // Perspective projection
+            const perspective = 800;
+            const scale = perspective / (perspective + z);
+            
+            return {
+                x: centerX + x * scale,
+                y: centerY + y * scale,
+                scale: scale
+            };
+        }
+
+        // Draw a line between two 3D points
+        function drawLine3D(x1, y1, z1, x2, y2, z2, rotX, rotY, progress, opacity = 1) {
+            const p1 = project3D(x1, y1, z1, rotX, rotY);
+            const p2 = project3D(x2, y2, z2, rotX, rotY);
+            
+            if (progress <= 0) return;
+            
+            const actualProgress = Math.min(progress, 1);
+            const endX = p1.x + (p2.x - p1.x) * actualProgress;
+            const endY = p1.y + (p2.y - p1.y) * actualProgress;
+            
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(endX, endY);
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.7 * opacity * Math.min(p1.scale, p2.scale)})`;
+            ctx.lineWidth = 1.5 * Math.min(p1.scale, p2.scale);
+            ctx.stroke();
+        }
+
+        // Draw accent line (gold)
+        function drawAccentLine3D(x1, y1, z1, x2, y2, z2, rotX, rotY, progress, opacity = 1) {
+            const p1 = project3D(x1, y1, z1, rotX, rotY);
+            const p2 = project3D(x2, y2, z2, rotX, rotY);
+            
+            if (progress <= 0) return;
+            
+            const actualProgress = Math.min(progress, 1);
+            const endX = p1.x + (p2.x - p1.x) * actualProgress;
+            const endY = p1.y + (p2.y - p1.y) * actualProgress;
+            
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(endX, endY);
+            ctx.strokeStyle = `rgba(201, 169, 97, ${0.9 * opacity * Math.min(p1.scale, p2.scale)})`;
+            ctx.lineWidth = 2 * Math.min(p1.scale, p2.scale);
+            ctx.stroke();
+        }
+
+        // Beautiful home interior room structure
+        function drawInterior(rotX, rotY, progress) {
+            // Scale room based on viewport width for better mobile visibility
+            let scaleFactor = 1;
+            if (width <= 480) {
+                scaleFactor = 1.4; // 40% larger on small mobile
+            } else if (width <= 768) {
+                scaleFactor = 1.3; // 30% larger on mobile
+            } else if (width <= 1024) {
+                scaleFactor = 1.15; // 15% larger on tablet
+            }
+
+            const roomWidth = 400 * scaleFactor;
+            const roomHeight = 300 * scaleFactor;
+            const roomDepth = 400 * scaleFactor;
+
+            // Calculate progress stages
+            const stage1 = Math.max(0, Math.min(1, progress * 4)); // Floor and walls
+            const stage2 = Math.max(0, Math.min(1, (progress - 0.25) * 4)); // Window and door frames
+            const stage3 = Math.max(0, Math.min(1, (progress - 0.5) * 4)); // Furniture outlines
+            const stage4 = Math.max(0, Math.min(1, (progress - 0.75) * 4)); // Details
+
+            // Floor
+            drawLine3D(-roomWidth/2, roomHeight/2, -roomDepth/2, roomWidth/2, roomHeight/2, -roomDepth/2, rotX, rotY, stage1);
+            drawLine3D(roomWidth/2, roomHeight/2, -roomDepth/2, roomWidth/2, roomHeight/2, roomDepth/2, rotX, rotY, stage1);
+            drawLine3D(roomWidth/2, roomHeight/2, roomDepth/2, -roomWidth/2, roomHeight/2, roomDepth/2, rotX, rotY, stage1);
+            drawLine3D(-roomWidth/2, roomHeight/2, roomDepth/2, -roomWidth/2, roomHeight/2, -roomDepth/2, rotX, rotY, stage1);
+
+            // Ceiling
+            drawLine3D(-roomWidth/2, -roomHeight/2, -roomDepth/2, roomWidth/2, -roomHeight/2, -roomDepth/2, rotX, rotY, stage1);
+            drawLine3D(roomWidth/2, -roomHeight/2, -roomDepth/2, roomWidth/2, -roomHeight/2, roomDepth/2, rotX, rotY, stage1);
+            drawLine3D(roomWidth/2, -roomHeight/2, roomDepth/2, -roomWidth/2, -roomHeight/2, roomDepth/2, rotX, rotY, stage1);
+            drawLine3D(-roomWidth/2, -roomHeight/2, roomDepth/2, -roomWidth/2, -roomHeight/2, -roomDepth/2, rotX, rotY, stage1);
+
+            // Back wall vertical edges
+            drawLine3D(-roomWidth/2, -roomHeight/2, -roomDepth/2, -roomWidth/2, roomHeight/2, -roomDepth/2, rotX, rotY, stage1);
+            drawLine3D(roomWidth/2, -roomHeight/2, -roomDepth/2, roomWidth/2, roomHeight/2, -roomDepth/2, rotX, rotY, stage1);
+
+            // Left wall vertical edges
+            drawLine3D(-roomWidth/2, -roomHeight/2, roomDepth/2, -roomWidth/2, roomHeight/2, roomDepth/2, rotX, rotY, stage1);
+
+            // Right wall vertical edges
+            drawLine3D(roomWidth/2, -roomHeight/2, roomDepth/2, roomWidth/2, roomHeight/2, roomDepth/2, rotX, rotY, stage1);
+
+            // Large window on back wall (accent lines)
+            const windowWidth = 200;
+            const windowHeight = 150;
+            const windowY = 0;
+            const windowZ = -roomDepth/2 + 1;
+
+            // Window frame
+            drawAccentLine3D(-windowWidth/2, -windowHeight/2, windowZ, windowWidth/2, -windowHeight/2, windowZ, rotX, rotY, stage2);
+            drawAccentLine3D(windowWidth/2, -windowHeight/2, windowZ, windowWidth/2, windowHeight/2, windowZ, rotX, rotY, stage2);
+            drawAccentLine3D(windowWidth/2, windowHeight/2, windowZ, -windowWidth/2, windowHeight/2, windowZ, rotX, rotY, stage2);
+            drawAccentLine3D(-windowWidth/2, windowHeight/2, windowZ, -windowWidth/2, -windowHeight/2, windowZ, rotX, rotY, stage2);
+
+            // Window panes (cross)
+            drawLine3D(0, -windowHeight/2, windowZ, 0, windowHeight/2, windowZ, rotX, rotY, stage2);
+            drawLine3D(-windowWidth/2, 0, windowZ, windowWidth/2, 0, windowZ, rotX, rotY, stage2);
+
+            // Door frame on left wall
+            const doorWidth = 80;
+            const doorHeight = 180;
+            const doorX = -roomWidth/2 + 1;
+            const doorZ = 0;
+
+            drawAccentLine3D(doorX, roomHeight/2, doorZ - doorWidth/2, doorX, roomHeight/2 - doorHeight, doorZ - doorWidth/2, rotX, rotY, stage2);
+            drawAccentLine3D(doorX, roomHeight/2 - doorHeight, doorZ - doorWidth/2, doorX, roomHeight/2 - doorHeight, doorZ + doorWidth/2, rotX, rotY, stage2);
+            drawAccentLine3D(doorX, roomHeight/2 - doorHeight, doorZ + doorWidth/2, doorX, roomHeight/2, doorZ + doorWidth/2, rotX, rotY, stage2);
+
+            // Modern sofa (right side)
+            const sofaW = 150, sofaH = 60, sofaD = 80;
+            const sofaX = 120, sofaY = roomHeight/2 - sofaH/2, sofaZ = 50;
+
+            // Sofa base
+            drawLine3D(sofaX - sofaW/2, sofaY, sofaZ - sofaD/2, sofaX + sofaW/2, sofaY, sofaZ - sofaD/2, rotX, rotY, stage3);
+            drawLine3D(sofaX + sofaW/2, sofaY, sofaZ - sofaD/2, sofaX + sofaW/2, sofaY, sofaZ + sofaD/2, rotX, rotY, stage3);
+            drawLine3D(sofaX + sofaW/2, sofaY, sofaZ + sofaD/2, sofaX - sofaW/2, sofaY, sofaZ + sofaD/2, rotX, rotY, stage3);
+            drawLine3D(sofaX - sofaW/2, sofaY, sofaZ + sofaD/2, sofaX - sofaW/2, sofaY, sofaZ - sofaD/2, rotX, rotY, stage3);
+
+            // Sofa back
+            drawLine3D(sofaX - sofaW/2, sofaY - sofaH, sofaZ + sofaD/2, sofaX + sofaW/2, sofaY - sofaH, sofaZ + sofaD/2, rotX, rotY, stage3);
+            drawLine3D(sofaX - sofaW/2, sofaY, sofaZ + sofaD/2, sofaX - sofaW/2, sofaY - sofaH, sofaZ + sofaD/2, rotX, rotY, stage3);
+            drawLine3D(sofaX + sofaW/2, sofaY, sofaZ + sofaD/2, sofaX + sofaW/2, sofaY - sofaH, sofaZ + sofaD/2, rotX, rotY, stage3);
+
+            // Coffee table (center)
+            const tableW = 100, tableH = 30, tableD = 60;
+            const tableX = 0, tableY = roomHeight/2 - tableH - 20, tableZ = 80;
+
+            drawLine3D(tableX - tableW/2, tableY, tableZ - tableD/2, tableX + tableW/2, tableY, tableZ - tableD/2, rotX, rotY, stage3);
+            drawLine3D(tableX + tableW/2, tableY, tableZ - tableD/2, tableX + tableW/2, tableY, tableZ + tableD/2, rotX, rotY, stage3);
+            drawLine3D(tableX + tableW/2, tableY, tableZ + tableD/2, tableX - tableW/2, tableY, tableZ + tableD/2, rotX, rotY, stage3);
+            drawLine3D(tableX - tableW/2, tableY, tableZ + tableD/2, tableX - tableW/2, tableY, tableZ - tableD/2, rotX, rotY, stage3);
+
+            // Table legs
+            drawLine3D(tableX - tableW/2 + 10, tableY, tableZ - tableD/2 + 10, tableX - tableW/2 + 10, tableY + tableH, tableZ - tableD/2 + 10, rotX, rotY, stage3);
+            drawLine3D(tableX + tableW/2 - 10, tableY, tableZ - tableD/2 + 10, tableX + tableW/2 - 10, tableY + tableH, tableZ - tableD/2 + 10, rotX, rotY, stage3);
+            drawLine3D(tableX - tableW/2 + 10, tableY, tableZ + tableD/2 - 10, tableX - tableW/2 + 10, tableY + tableH, tableZ + tableD/2 - 10, rotX, rotY, stage3);
+            drawLine3D(tableX + tableW/2 - 10, tableY, tableZ + tableD/2 - 10, tableX + tableW/2 - 10, tableY + tableH, tableZ + tableD/2 - 10, rotX, rotY, stage3);
+
+            // Modern chair (left side)
+            const chairW = 60, chairH = 80, chairD = 60;
+            const chairX = -140, chairY = roomHeight/2 - chairH/2, chairZ = 100;
+
+            drawLine3D(chairX - chairW/2, chairY, chairZ - chairD/2, chairX + chairW/2, chairY, chairZ - chairD/2, rotX, rotY, stage3);
+            drawLine3D(chairX + chairW/2, chairY, chairZ - chairD/2, chairX + chairW/2, chairY, chairZ + chairD/2, rotX, rotY, stage3);
+            drawLine3D(chairX + chairW/2, chairY, chairZ + chairD/2, chairX - chairW/2, chairY, chairZ + chairD/2, rotX, rotY, stage3);
+            drawLine3D(chairX - chairW/2, chairY, chairZ + chairD/2, chairX - chairW/2, chairY, chairZ - chairD/2, rotX, rotY, stage3);
+
+            // Chair back
+            drawLine3D(chairX - chairW/2, chairY - chairH + 30, chairZ + chairD/2, chairX + chairW/2, chairY - chairH + 30, chairZ + chairD/2, rotX, rotY, stage3);
+            drawLine3D(chairX - chairW/2, chairY, chairZ + chairD/2, chairX - chairW/2, chairY - chairH + 30, chairZ + chairD/2, rotX, rotY, stage3);
+            drawLine3D(chairX + chairW/2, chairY, chairZ + chairD/2, chairX + chairW/2, chairY - chairH + 30, chairZ + chairD/2, rotX, rotY, stage3);
+
+            // Decorative pendant light
+            const lightX = 0, lightY = -roomHeight/2 + 40, lightZ = 0;
+            drawAccentLine3D(lightX, -roomHeight/2, lightZ, lightX, lightY, lightZ, rotX, rotY, stage4);
+            drawLine3D(lightX - 25, lightY, lightZ - 25, lightX + 25, lightY, lightZ - 25, rotX, rotY, stage4);
+            drawLine3D(lightX + 25, lightY, lightZ - 25, lightX + 25, lightY, lightZ + 25, rotX, rotY, stage4);
+            drawLine3D(lightX + 25, lightY, lightZ + 25, lightX - 25, lightY, lightZ + 25, rotX, rotY, stage4);
+            drawLine3D(lightX - 25, lightY, lightZ + 25, lightX - 25, lightY, lightZ - 25, rotX, rotY, stage4);
+
+            // Decorative shelves on right wall
+            for (let i = 0; i < 3; i++) {
+                const shelfY = -roomHeight/2 + 80 + i * 60;
+                const shelfZ = -100;
+                const shelfW = 80;
+                drawLine3D(roomWidth/2 - 2, shelfY, shelfZ - shelfW/2, roomWidth/2 - 2, shelfY, shelfZ + shelfW/2, rotX, rotY, stage4, 0.6);
+            }
+
+            // Floor tiles grid
+            const tileSize = 50;
+            for (let i = -roomWidth/2; i <= roomWidth/2; i += tileSize) {
+                drawLine3D(i, roomHeight/2, -roomDepth/2, i, roomHeight/2, roomDepth/2, rotX, rotY, stage4, 0.2);
+            }
+            for (let i = -roomDepth/2; i <= roomDepth/2; i += tileSize) {
+                drawLine3D(-roomWidth/2, roomHeight/2, i, roomWidth/2, roomHeight/2, i, rotX, rotY, stage4, 0.2);
+            }
+        }
+
+        // Animation loop
+        let lastTime = Date.now();
+        function animate() {
+            const currentTime = Date.now();
+            const deltaTime = (currentTime - lastTime) / 1000;
+            lastTime = currentTime;
+
+            // Smooth mouse interpolation
+            mouseX += (targetMouseX - mouseX) * 0.05;
+            mouseY += (targetMouseY - mouseY) * 0.05;
+
+            // Clear canvas
+            ctx.fillStyle = 'rgba(10, 10, 10, 1)';
+            ctx.fillRect(0, 0, width, height);
+
+            // Progress animation (loops)
+            animationProgress += deltaTime * 0.15;
+            if (animationProgress > 1.3) {
+                animationProgress = 0;
+            }
+
+            // Rotation based on mouse + auto-rotation
+            const rotX = -0.2 + mouseY * 0.3 + Math.sin(currentTime * 0.0002) * 0.1;
+            const rotY = mouseX * 0.4 + currentTime * 0.0001;
+
+            // Draw the interior
+            drawInterior(rotX, rotY, animationProgress);
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Handle resize
+        window.addEventListener('resize', resizeCanvas);
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('resize', resizeCanvas);
+        };
     }
     
     if (document.readyState === 'loading') {

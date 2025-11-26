@@ -36,6 +36,8 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
@@ -45,6 +47,54 @@ body {
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Mobile Touch & Tap Target Enhancements */
+button,
+a,
+input,
+select,
+textarea,
+.nav-link,
+.btn,
+.filter-btn,
+.service-card,
+.nav-toggle,
+.faq-question {
+    -webkit-tap-highlight-color: rgba(255, 107, 53, 0.2);
+    touch-action: manipulation;
+}
+
+/* Minimum tap target sizes for mobile accessibility */
+.btn,
+.nav-link,
+.filter-btn,
+button[type="submit"],
+.nav-toggle {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure form inputs are at least 16px to prevent iOS zoom */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+input[type="url"],
+textarea,
+select {
+    font-size: 16px !important;
+}
+
+/* Better touch scrolling */
+.nav-menu,
+.service-detail,
+.faq-section {
+    -webkit-overflow-scrolling: touch;
 }
 
 a {
@@ -1254,6 +1304,76 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===================================
+   Testimonials Section
+   ================================== */
+.testimonials-section {
+    padding: 120px 0;
+    background: var(--light-gray);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.testimonial-card {
+    background: var(--white);
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.testimonial-rating {
+    margin-bottom: 24px;
+}
+
+.testimonial-rating .star {
+    color: var(--accent);
+    font-size: 20px;
+    margin-right: 4px;
+}
+
+.testimonial-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--dark-gray);
+    margin-bottom: 24px;
+    flex-grow: 1;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 24px;
+    border-top: 1px solid var(--medium-gray);
+}
+
+.testimonial-author strong {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.testimonial-author span {
+    font-size: 13px;
+    color: var(--dark-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+/* ===================================
    About Page
    ================================== */
 .about-section {
@@ -1444,6 +1564,10 @@ h1, h2, h3, h4, h5, h6 {
         grid-template-columns: repeat(2, 1fr);
     }
     
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
     .service-detail-grid,
     .contact-grid,
     .about-grid {
@@ -1527,6 +1651,11 @@ h1, h2, h3, h4, h5, h6 {
     .process-grid,
     .portfolio-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
     
     .portfolio-filters {

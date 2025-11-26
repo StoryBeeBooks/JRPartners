@@ -23,6 +23,129 @@
     <meta property="og:url" content="https://jrpartners.ca/services.html">
     <meta property="og:site_name" content="JRPartners">
     
+    <!-- Service Schema Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "LocalBusiness",
+                "@id": "https://jrpartners.ca/#organization",
+                "name": "JRPartners",
+                "url": "https://jrpartners.ca",
+                "telephone": "+1-905-761-7333",
+                "email": "support@jrpartners.ca",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Unit 2 - 1300 Alness Street",
+                    "addressLocality": "Toronto",
+                    "addressRegion": "ON",
+                    "postalCode": "L4K 2W6",
+                    "addressCountry": "CA"
+                }
+            },
+            {
+                "@type": "Service",
+                "@id": "https://jrpartners.ca/services.html#stone-retail",
+                "serviceType": "Stone Retail",
+                "name": "Premium Stone Retail Materials",
+                "description": "Curated collection of premium natural and engineered stone materials including granite, marble, quartz, and sintered stone from around the world.",
+                "provider": {
+                    "@id": "https://jrpartners.ca/#organization"
+                },
+                "areaServed": "Toronto, Ontario",
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Stone Materials",
+                    "itemListElement": [
+                        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Premium Granite Slabs"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Marble Slabs"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Engineered Quartz"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Natural Stone Tiles"}},
+                        {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Porcelain & Ceramic"}}
+                    ]
+                }
+            },
+            {
+                "@type": "Service",
+                "@id": "https://jrpartners.ca/services.html#stone-fabrication",
+                "serviceType": "Stone Fabrication",
+                "name": "Precision Stone Fabrication Services",
+                "description": "Expert stone fabrication for countertops, vanities, and architectural elements using advanced CNC technology and traditional craftsmanship.",
+                "provider": {
+                    "@id": "https://jrpartners.ca/#organization"
+                },
+                "areaServed": "Toronto, Ontario",
+                "offers": {
+                    "@type": "Offer",
+                    "description": "Custom stone countertops, kitchen islands, bathroom vanities, fireplace surrounds, and commercial installations"
+                }
+            },
+            {
+                "@type": "Service",
+                "@id": "https://jrpartners.ca/services.html#ordosaxum",
+                "serviceType": "Luxury Stone Design",
+                "name": "OrdoSaxum - Boutique Stone Design",
+                "description": "High-end luxury stone fabrication and design featuring book-matched slabs, backlit installations, and bespoke architectural elements.",
+                "provider": {
+                    "@id": "https://jrpartners.ca/#organization"
+                },
+                "areaServed": "Toronto, Ontario",
+                "url": "https://ordosaxum.ca",
+                "offers": {
+                    "@type": "Offer",
+                    "description": "Luxury stone feature walls, book-matched installations, backlit onyx and quartzite, bespoke architectural stone elements"
+                }
+            },
+            {
+                "@type": "Service",
+                "@id": "https://jrpartners.ca/services.html#custom-cabinetry",
+                "serviceType": "Custom Cabinetry",
+                "name": "Bespoke Custom Cabinetry",
+                "description": "Premium custom kitchen and bathroom cabinetry designed and built to exact specifications using furniture-grade materials and finishes.",
+                "provider": {
+                    "@id": "https://jrpartners.ca/#organization"
+                },
+                "areaServed": "Toronto, Ontario",
+                "offers": {
+                    "@type": "Offer",
+                    "description": "Custom kitchen cabinets, bathroom vanities, built-in storage, walk-in closets, entertainment centers, home office millwork"
+                }
+            },
+            {
+                "@type": "Service",
+                "@id": "https://jrpartners.ca/services.html#doors-windows",
+                "serviceType": "Doors and Windows Installation",
+                "name": "High-Performance Doors & Windows",
+                "description": "Energy-efficient doors and windows installation with brick-to-brick service, including triple-glazing options for Canadian climate.",
+                "provider": {
+                    "@id": "https://jrpartners.ca/#organization"
+                },
+                "areaServed": "Toronto, Ontario",
+                "offers": {
+                    "@type": "Offer",
+                    "description": "Entry doors, patio doors, casement windows, sliding windows, picture windows, Low-E glass, triple-glazing, brick-to-brick installation"
+                }
+            },
+            {
+                "@type": "Service",
+                "@id": "https://jrpartners.ca/services.html#landscaping",
+                "serviceType": "Landscaping Services",
+                "name": "Complete Landscaping Solutions",
+                "description": "Full-service landscaping including hardscaping, retaining walls, softscaping, green roofs, and material supply for residential and commercial properties.",
+                "provider": {
+                    "@id": "https://jrpartners.ca/#organization"
+                },
+                "areaServed": "Toronto, Ontario",
+                "offers": {
+                    "@type": "Offer",
+                    "description": "Retaining walls, hardscaping, patio installation, driveway paving, softscaping, green roofs, landscape design, material supply"
+                }
+            }
+        ]
+    }
+    </script>
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>

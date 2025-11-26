@@ -1440,7 +1440,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .phase-subtitle {
     font-size: 15px;
-    color: var(--medium-gray);
+    color: var(--dark-gray);
     font-style: italic;
     margin: 0;
 }
@@ -1473,7 +1473,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-left: 24px;
     font-size: 15px;
     line-height: 1.7;
-    color: var(--medium-gray);
+    color: var(--dark-gray);
 }
 
 .phase-list li::before {

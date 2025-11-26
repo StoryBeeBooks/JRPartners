@@ -113,20 +113,23 @@
                             <a href="mailto:support@jrpartners.ca">support@jrpartners.ca</a>
                         </p>
                     </div>
-                    
-                    <div class="contact-info-item">
-                        <h3 class="contact-info-title">Our Divisions</h3>
-                        <p class="contact-info-text">
-                            <a href="https://www.allcornerstone.com/" target="_blank">AllCornerstone.com</a> - Stone Fabrication<br>
-                            <a href="https://www.luxestoneandtile.com/" target="_blank">LuxeStoneAndTile.com</a> - Stone Retail<br>
-                            <a href="https://eracable.ai/" target="_blank">ERAcable.ai</a> - Smart Infrastructure
-                        </p>
-                    </div>
                 </div>
                 
                 <!-- Contact Form -->
                 <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="5f33dec5-3175-4ee0-b117-face8038368d">
+                        
+                        <!-- Optional: Redirect after submission -->
+                        <input type="hidden" name="redirect" value="https://jrpartners.ca/thank-you.html">
+                        
+                        <!-- Optional: Custom subject line -->
+                        <input type="hidden" name="subject" value="New Contact Form Submission from JRPartners.ca">
+                        
+                        <!-- Optional: From name (your business name) -->
+                        <input type="hidden" name="from_name" value="JRPartners Website">
+                        
                         <div class="form-group">
                             <label class="form-label" for="name">Full Name *</label>
                             <input type="text" id="name" name="name" class="form-input" required>
@@ -146,26 +149,26 @@
                             <label class="form-label" for="service">Service of Interest</label>
                             <select id="service" name="service" class="form-input">
                                 <option value="">Select a service</option>
-                                <option value="stone-fabrication">Stone Fabrication</option>
-                                <option value="stone-retail">Stone Retail</option>
-                                <option value="custom-cabinetry">Custom Cabinetry</option>
-                                <option value="doors-windows">Doors & Windows</option>
-                                <option value="interior-design">Interior Design</option>
-                                <option value="ordosaxum">OrdoSaxum Stone Design</option>
-                                <option value="multiple">Multiple Services</option>
-                                <option value="other">Other</option>
+                                <option value="Stone Retail">Stone Retail</option>
+                                <option value="Stone Fabrication">Stone Fabrication</option>
+                                <option value="OrdoSaxum Stone Design">OrdoSaxum Stone Design</option>
+                                <option value="Custom Cabinetry">Custom Cabinetry</option>
+                                <option value="Doors & Windows">Doors & Windows</option>
+                                <option value="Landscaping">Landscaping</option>
+                                <option value="Multiple Services">Multiple Services</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
                             <label class="form-label" for="project-type">Project Type</label>
-                            <select id="project-type" name="project-type" class="form-input">
+                            <select id="project-type" name="project_type" class="form-input">
                                 <option value="">Select project type</option>
-                                <option value="residential-new">New Residential Build</option>
-                                <option value="residential-renovation">Residential Renovation</option>
-                                <option value="commercial-new">New Commercial Build</option>
-                                <option value="commercial-renovation">Commercial Renovation</option>
-                                <option value="consultation">Consultation Only</option>
+                                <option value="New Residential Build">New Residential Build</option>
+                                <option value="Residential Renovation">Residential Renovation</option>
+                                <option value="New Commercial Build">New Commercial Build</option>
+                                <option value="Commercial Renovation">Commercial Renovation</option>
+                                <option value="Consultation Only">Consultation Only</option>
                             </select>
                         </div>
                         
@@ -174,12 +177,27 @@
                             <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us about your project, timeline, and any specific requirements..."></textarea>
                         </div>
                         
+                        <!-- Honeypot Spam Protection -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        
                         <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
                         
                         <p style="font-size: 13px; color: var(--dark-gray); margin-top: 16px; text-align: center;">
                             By submitting this form, you agree to our <a href="privacy.html" style="color: var(--accent);">Privacy Policy</a>.
                         </p>
                     </form>
+                    
+                    <!-- Success Message (Hidden by default) -->
+                    <div id="form-success" style="display: none; padding: 40px; text-align: center; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; margin-top: 20px;">
+                        <h3 style="color: #155724; margin-bottom: 10px;">✓ Message Sent Successfully!</h3>
+                        <p style="color: #155724;">Thank you for contacting us. We'll get back to you shortly.</p>
+                    </div>
+                    
+                    <!-- Error Message (Hidden by default) -->
+                    <div id="form-error" style="display: none; padding: 40px; text-align: center; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 4px; margin-top: 20px;">
+                        <h3 style="color: #721c24; margin-bottom: 10px;">⚠ Submission Failed</h3>
+                        <p style="color: #721c24;">Please try again or contact us directly at support@jrpartners.ca</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -188,9 +206,9 @@
     <!-- Map Section (Placeholder) -->
     <section style="padding: 0; background: var(--light-gray); height: 400px; display: flex; align-items: center; justify-content: center;">
         <div style="text-align: center; color: var(--dark-gray);">
-            <p style="font-size: 14px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px;">Location Map</p>
-            <p style="font-size: 13px;">Unit 2 - 1300 Alness Street, Toronto, ON L4K 2W6</p>
-            <p style="font-size: 12px; margin-top: 12px; opacity: 0.7;">Map integration placeholder</p>
+            <p style="font-size: 14px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px;">Location</p>
+            <p style="font-size:35px;">Unit 2 - 1300 Alness Street, Toronto, ON L4K 2W6</p>
+            <p style="font-size: 12px; margin-top: 12px; opacity: 0.7;">Come and visit us!</p>
         </div>
     </section>
 

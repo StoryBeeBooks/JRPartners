@@ -82,4 +82,12 @@
         <priority>0.8</priority>
     </url>
     
+    <!-- Thank You Page -->
+    <url>
+        <loc>https://jrpartners.ca/thank-you</loc>
+        <lastmod>2025-11-26</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
+    </url>
+    
 </urlset>

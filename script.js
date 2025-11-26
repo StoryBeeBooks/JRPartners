@@ -136,30 +136,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Form validation for contact form
+// Form validation and submission for contact form
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+    contactForm.addEventListener('submit', async (e) => {
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
         
-        // Basic validation
+        // Show loading state
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+        
+        // Web3Forms handles the submission automatically
+        // The form will redirect to thank-you.html on success
+        
+        // Optional: Add client-side validation
         const name = contactForm.querySelector('input[name="name"]');
         const email = contactForm.querySelector('input[name="email"]');
         const message = contactForm.querySelector('textarea[name="message"]');
         
         if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+            e.preventDefault();
             alert('Please fill in all required fields');
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
             return;
         }
         
         if (!isValidEmail(email.value)) {
+            e.preventDefault();
             alert('Please enter a valid email address');
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
             return;
         }
-        
-        // Success message
-        alert('Thank you for your message! We will get back to you soon.');
-        contactForm.reset();
     });
 }
 

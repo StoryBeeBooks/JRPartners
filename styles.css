@@ -1619,6 +1619,7 @@ h1, h2, h3, h4, h5, h6 {
     
     .hero-content {
         padding: 0 24px 60px 24px;
+        text-align: center;
     }
     
     .hero-video {
@@ -1638,8 +1639,37 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 48px;
     }
     
+    .page-subtitle {
+        font-size: 16px;
+    }
+    
+    .page-hero {
+        padding: 120px 0 80px;
+    }
+    
     .section-title {
         font-size: 32px;
+    }
+    
+    .intro-section {
+        padding: 80px 0;
+        text-align: center;
+    }
+    
+    .intro-text {
+        font-size: 18px;
+    }
+    
+    .service-card {
+        text-align: center;
+    }
+    
+    .process-step {
+        text-align: center;
+    }
+    
+    .stat-item {
+        text-align: center;
     }
     
     .cta-title {
@@ -1661,6 +1691,7 @@ h1, h2, h3, h4, h5, h6 {
     .portfolio-filters {
         flex-wrap: wrap;
         overflow-x: visible;
+        justify-content: center;
     }
     
     .filter-btn {
@@ -1672,13 +1703,46 @@ h1, h2, h3, h4, h5, h6 {
         grid-template-columns: 1fr;
     }
     
+    /* Mobile Footer - 2 Column Layout */
     .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .footer-col:first-child {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+    
+    .footer-col:first-child .footer-logo {
+        justify-content: center;
+    }
+    
+    .footer-col:first-child .footer-tagline {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .footer-bottom {
+        text-align: center;
     }
     
     .contact-form {
         padding: 40px;
+    }
+    
+    /* Center align buttons and CTAs on mobile */
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .cta-buttons {
+        justify-content: center;
+    }
+    
+    .btn {
+        text-align: center;
+        justify-content: center;
     }
 }
 
@@ -1694,15 +1758,33 @@ h1, h2, h3, h4, h5, h6 {
     .btn {
         width: 100%;
         text-align: center;
+        justify-content: center;
     }
     
     .hero-buttons,
     .cta-buttons {
         flex-direction: column;
+        align-items: center;
     }
     
     .contact-form {
         padding: 32px 24px;
+    }
+    
+    /* Single column footer for very small screens */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .footer-col {
+        text-align: center;
+    }
+    
+    .footer-links,
+    .footer-contact {
+        text-align: center;
     }
 }
 

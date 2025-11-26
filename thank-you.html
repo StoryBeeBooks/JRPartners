@@ -84,6 +84,13 @@
             font-weight: 600;
         }
         
+        .thank-you-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
         @media (max-width: 768px) {
             .thank-you-content {
                 padding: 40px 30px;
@@ -95,6 +102,36 @@
             
             .thank-you-text {
                 font-size: 16px;
+            }
+            
+            .thank-you-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 35px;
+            }
+            
+            .thank-you-buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .thank-you-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .thank-you-section {
+                padding: 40px 15px;
+            }
+            
+            .thank-you-content {
+                padding: 30px 20px;
+            }
+            
+            .thank-you-info {
+                padding: 20px;
             }
         }
     </style>
@@ -141,7 +178,7 @@
                 <p>For urgent matters, please call us directly at <a href="tel:+19057617333">(905) 761-7333</a></p>
             </div>
             
-            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <div class="thank-you-buttons">
                 <a href="index.html" class="btn btn-primary">Back to Home</a>
                 <a href="services.html" class="btn" style="background: var(--dark-gray); color: var(--white);">View Services</a>
             </div>

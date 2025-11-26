@@ -1374,6 +1374,197 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===================================
+   Work Process Section
+   ================================== */
+.work-process-section {
+    padding: 140px 0;
+    background: linear-gradient(to bottom, var(--white) 0%, var(--off-white) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.work-process-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+        transparent 0%, 
+        var(--accent) 15%, 
+        var(--accent) 85%, 
+        transparent 100%);
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.process-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 100px;
+    position: relative;
+    z-index: 2;
+}
+
+.process-intro {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--dark-gray);
+    margin: 32px 0 24px;
+}
+
+.process-tagline {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--black);
+    margin-top: 24px;
+}
+
+.process-phase {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 60px;
+    margin-bottom: 100px;
+    position: relative;
+    z-index: 2;
+}
+
+.process-phase.phase-right .phase-content {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.process-phase.phase-right .phase-number {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.process-phase.phase-left .phase-content {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.process-phase.phase-left .phase-number {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.phase-number {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 8px;
+}
+
+.number-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 3px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 3;
+    transition: var(--transition);
+}
+
+.process-phase:hover .number-circle {
+    background: var(--accent);
+    color: var(--white);
+    transform: scale(1.1);
+    box-shadow: 0 8px 24px rgba(218, 165, 32, 0.3);
+}
+
+.phase-content {
+    background: var(--white);
+    padding: 48px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    border-left: 4px solid var(--accent);
+}
+
+.process-phase:hover .phase-content {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.phase-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.phase-tagline {
+    font-size: 16px;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.phase-description {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--dark-gray);
+    margin-bottom: 32px;
+}
+
+.phase-details {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.phase-detail-item {
+    padding-left: 24px;
+    border-left: 2px solid var(--light-gray);
+    transition: var(--transition);
+}
+
+.phase-detail-item:hover {
+    border-left-color: var(--accent);
+}
+
+.phase-detail-item h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 8px;
+}
+
+.phase-detail-item p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--medium-gray);
+}
+
+.process-closing {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 2px solid var(--light-gray);
+    position: relative;
+    z-index: 2;
+}
+
+.closing-tagline {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--black);
+    font-style: italic;
+}
+
+/* ===================================
    About Page
    ================================== */
 .about-section {
@@ -1688,6 +1879,74 @@ h1, h2, h3, h4, h5, h6 {
         gap: 30px;
     }
     
+    /* Work Process Responsive - Tablet */
+    .work-process-section {
+        padding: 80px 0;
+    }
+    
+    .work-process-section::before {
+        display: none;
+    }
+    
+    .process-header {
+        margin-bottom: 60px;
+    }
+    
+    .process-intro {
+        font-size: 16px;
+    }
+    
+    .process-phase {
+        grid-template-columns: 60px 1fr;
+        gap: 24px;
+        margin-bottom: 60px;
+    }
+    
+    .process-phase.phase-right .phase-content,
+    .process-phase.phase-left .phase-content {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
+    .process-phase.phase-right .phase-number,
+    .process-phase.phase-left .phase-number {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .phase-content {
+        padding: 32px 24px;
+    }
+    
+    .phase-title {
+        font-size: 22px;
+    }
+    
+    .phase-tagline {
+        font-size: 14px;
+    }
+    
+    .phase-description {
+        font-size: 15px;
+    }
+    
+    .phase-detail-item h4 {
+        font-size: 15px;
+    }
+    
+    .phase-detail-item p {
+        font-size: 14px;
+    }
+    
+    .process-closing {
+        margin-top: 40px;
+        padding-top: 40px;
+    }
+    
+    .closing-tagline {
+        font-size: 18px;
+    }
+    
     .portfolio-filters {
         flex-wrap: wrap;
         overflow-x: visible;
@@ -1769,6 +2028,36 @@ h1, h2, h3, h4, h5, h6 {
         align-items: center;
         width: 100%;
     }
+    
+    /* Work Process Mobile */
+    .number-circle {
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+    }
+    
+    .process-phase {
+        grid-template-columns: 48px 1fr;
+        gap: 16px;
+        margin-bottom: 48px;
+    }
+    
+    .phase-content {
+        padding: 24px 16px;
+    }
+    
+    .phase-title {
+        font-size: 20px;
+    }
+    
+    .phase-detail-item {
+        padding-left: 16px;
+    }
+    
+    .closing-tagline {
+        font-size: 16px;
+    }
+
     
     .contact-form {
         padding: 32px 24px;

@@ -6,9 +6,9 @@
     
     <!-- SEO Meta Tags -->
     <title>JRPartners - Premium Home Solutions & Enterprise Services | Toronto</title>
-    <meta name="description" content="JRPartners delivers exceptional home solutions across 6 specialized divisions: stone fabrication, custom cabinetry, interior design, doors & windows, flooring, and stone retail. Transform your space with Toronto's trusted enterprise group - 1000+ projects completed.">
-    <meta name="keywords" content="JRPartners, home renovation Toronto, stone fabrication, custom kitchen cabinets, interior design, doors windows installation, flooring company, stone retail, home solutions, Toronto contractors, luxury homes, commercial builders">
-    <meta name="author" content="JRPartners Enterprise Group">
+    <meta name="description" content="JRPartners delivers exceptional home solutions across 6 specialized divisions: stone retail, stone fabrication, OrdoSaxum luxury stone design, custom cabinetry, doors & windows, and Landscaping. Transform your space with Toronto's trusted enterprise group - 1000+ projects completed.">
+    <meta name="keywords" content="JRPartners, home renovation Toronto, stone retail, stone fabrication, OrdoSaxum, luxury stone design, sintered stone, natural stone, marble, quartzite, onyx, granite, custom kitchen cabinets, Landscaping, retaining walls, hardscaping, softscaping, green roof, doors windows installation, home solutions, Toronto contractors, luxury homes, commercial builders">
+    <meta name="author" content="JR Stone Elite">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="geo.region" content="CA-ON">
@@ -19,8 +19,8 @@
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="JRPartners - Premium Home Solutions & Enterprise Services">
-    <meta property="og:description" content="Transform your space with Toronto's trusted enterprise group. 6 specialized divisions delivering exceptional home solutions from stone fabrication to interior design. 1000+ projects completed.">
-    <meta property="og:url" content="https://storybeeBooks.github.io/JRPartners/">
+    <meta property="og:description" content="Transform your space with Toronto's trusted enterprise group. 6 specialized divisions delivering exceptional home solutions from stone fabrication to Landscaping. 1000+ projects completed.">
+    <meta property="og:url" content="https://jrpartners.ca">
     <meta property="og:site_name" content="JRPartners">
     <meta property="og:image" content="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartners1.jpg">
     <meta property="og:image:width" content="1200">
@@ -43,1666 +43,289 @@
     <meta name="business:contact_data:email" content="support@jrpartners.ca">
     
     <!-- Technical SEO -->
-    <link rel="canonical" href="https://storybeeBooks.github.io/JRPartners/">
-    <meta name="theme-color" content="#0a0a0a">
-    <meta name="msapplication-TileColor" content="#0a0a0a">
+    <link rel="canonical" href="https://jrpartners.ca">
+    <meta name="theme-color" content="#FFFFFF">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
     
     <link rel="stylesheet" href="styles.css">
-    <!-- Luxury Typography - Elegant Serif & Refined Sans-Serif -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="loading">
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loading-container">
-            <div class="loading-logo">
-                <div class="logo-icon-large">JR</div>
-                <div class="logo-text-large">JRPARTNERS</div>
-            </div>
-            <div class="loading-bar">
-                <div class="loading-progress" id="loadingProgress"></div>
-            </div>
-            <div class="loading-text">Loading Premium Experience...</div>
-        </div>
-    </div>
-
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-progress-container">
-        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
-    </div>
-
-    <!-- Page Transition Overlay -->
-    <div class="page-transition" id="pageTransition"></div>
-
+<body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <div class="logo-icon">JR</div>
-                <span class="logo-text">JRPARTNERS</span>
+            <a href="index.html" class="logo">
+                <span class="logo-mark">JR</span>
+                <span class="logo-text">PARTNERS</span>
+            </a>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link nav-cta">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-title-top">
-            <h1>PREMIUM HOME SOLUTIONS<br>&amp; ENTERPRISE SERVICES</h1>
+        <div class="hero-content">
+            <div class="hero-subtitle">Enterprise Solutions</div>
+            <h1 class="hero-title">
+                Building Excellence Through<br>
+                <span class="accent-text">Integrated Expertise</span>
+            </h1>
+            <p class="hero-description">
+                Six specialized divisions working in harmony to deliver exceptional results. 
+                From concept to completion, we transform spaces with precision and artistry.
+            </p>
+            <div class="hero-buttons">
+                <a href="services.html" class="btn btn-primary">Explore Our Services</a>
+                <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+            </div>
         </div>
-        <div class="hero-canvas-container">
-            <canvas id="wireframeCanvas"></canvas>
+        <div class="hero-video">
+            <video autoplay loop muted playsinline>
+                <source src="videos/Design2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </section>
 
-    <!-- Company Names Carousel Bar -->
-    <div class="company-names-container" id="companyNames"></div>
-
-    <!-- Our Companies Section -->
-    <section class="companies">
+    <!-- Stats Section -->
+    <section class="stats-section">
         <div class="container">
-            <h2>OUR ENTERPRISE<br>DIVISIONS</h2>
-            <p class="section-subtitle">Six specialized companies delivering premium home solutions and services</p>
-            
-            <!-- Top Row - Flip Cards -->
-            <div class="companies-row">
-                <!-- Stone Fabrication -->
-                <div class="flip-card" id="stone-fabrication">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartner11A.jpeg" alt="Stone Fabrication Services">
-                            <div class="card-overlay">
-                                <div class="card-content">
-                                    <h3>STONE FABRICATION</h3>
-                                    <p>Custom stone cutting and fabrication for countertops and architectural elements.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="back-content">
-                                <p>Precision stone fabrication tailored to your vision — from sleek countertops to lasting monuments and architectural masterpieces.</p>
-                                <a href="https://www.allcornerstone.com/" class="learn-more-btn" target="_blank">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Projects Delivered</div>
                 </div>
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Divisions</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">Our Approach</span>
+                <h2 class="section-title">Integrated Excellence</h2>
+                <div class="title-accent"></div>
+            </div>
+            <div class="intro-content">
+                <p class="intro-text">
+                    JRPartners stands at the intersection of craftsmanship and innovation. Our integrated enterprise model 
+                    brings together six specialized divisions, each a leader in their field, working seamlessly to deliver 
+                    comprehensive solutions for residential and commercial projects across the Greater Toronto Area.
+                </p>
+                <p class="intro-text">
+                    What sets us apart is our ability to orchestrate complex projects with precision. When you work with 
+                    JRPartners, you're partnering with an entire ecosystem of expertise, 
+                    all committed to bringing your vision to life with uncompromising quality.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What We Do</span>
+                <h2 class="section-title">Six Divisions. One Vision.</h2>
+                <div class="title-accent"></div>
+            </div>
+            
+            <div class="services-grid">
                 <!-- Stone Retail -->
-                <div class="flip-card" id="stone-retail">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartner11B.jpeg" alt="Stone Retail Store">
-                            <div class="card-overlay">
-                                <div class="card-content">
-                                    <h3>STONE RETAIL</h3>
-                                    <p>Premium stone materials for both residential and commercial projects.</p>
-                                </div>
-                            </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartner11B.jpeg" alt="Stone Retail">
+                        <div class="service-overlay">
+                            <a href="services.html#stone-retail" class="service-link">Learn More →</a>
                         </div>
-                        <div class="flip-card-back">
-                            <div class="back-content">
-                                <p>From homes to large-scale developments, our natural and engineered stone delivers unmatched quality, durability, and design versatility.</p>
-                                <a href="https://www.luxestoneandtile.com/" class="learn-more-btn" target="_blank">Learn More</a>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Stone Retail</h3>
+                        <p class="service-description">
+                            Curated collection of premium natural and engineered stone. From residential elegance 
+                            to commercial-scale projects.
+                        </p>
+                        <a href="https://www.luxestoneandtile.com/" class="service-website" target="_blank">Visit LuxeStone →</a>
                     </div>
                 </div>
 
-                <!-- Kitchen Cabinets -->
-                <div class="flip-card" id="kitchen-cabinets">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartner11C.jpeg" alt="Custom Kitchen Cabinets">
-                            <div class="card-overlay">
-                                <div class="card-content">
-                                    <h3>KITCHEN CABINETS</h3>
-                                    <p>Kitchen cabinetry design and installation with premium finishes.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="back-content">
-                                <p>Transform your home with custom kitchen cabinetry, expertly designed and installed with premium materials and finishes.</p>
-                            </div>
+                <!-- Stone Fabrication -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartner11A.jpeg" alt="Stone Fabrication">
+                        <div class="service-overlay">
+                            <a href="services.html#stone-fabrication" class="service-link">Learn More →</a>
                         </div>
                     </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Stone Fabrication</h3>
+                        <p class="service-description">
+                            Precision-engineered stone countertops and architectural elements. CNC technology meets 
+                            artisanal craftsmanship for flawless results.
+                        </p>
+                        <a href="https://www.allcornerstone.com/" class="service-website" target="_blank">Visit Cornerstone →</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Second Row - Flip Cards -->
-            <div class="companies-row">
+                <!-- OrdoSaxum Stone Design -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartners1.jpg" alt="OrdoSaxum Stone Design">
+                        <div class="service-overlay">
+                            <a href="services.html#ordosaxum" class="service-link">Learn More →</a>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Stone Design</h3>
+                        <p class="service-description">
+                            Luxury boutique stone fabrication featuring high-grade natural stone
+                            and advanced sintered stone for unique, one-of-a-kind custom features.
+                        </p>
+                        <a href="https://www.ordosaxum.ca/" class="service-website" target="_blank">Visit OrdoSaxum →</a>
+                    </div>
+                </div>
+
+                <!-- Custom Cabinetry -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartner11C.jpeg" alt="Custom Cabinetry">
+                        <div class="service-overlay">
+                            <a href="services.html#custom-cabinetry" class="service-link">Learn More →</a>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Custom Cabinetry</h3>
+                        <p class="service-description">
+                            Bespoke kitchen and bathroom cabinetry designed for your lifestyle. Premium materials, 
+                            impeccable finishes, timeless design.
+                        </p>
+                    </div>
+                </div>
+
                 <!-- Doors & Windows -->
-                <div class="flip-card" id="doors-windows">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartner13A.jpeg" alt="Doors and Windows">
-                            <div class="card-overlay">
-                                <div class="card-content">
-                                    <h3>DOORS & WINDOWS</h3>
-                                    <p>High-quality doors and windows installation for residential and commercial properties.</p>
-                                </div>
-                            </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartner13A.jpeg" alt="Doors and Windows">
+                        <div class="service-overlay">
+                            <a href="services.html#doors-windows" class="service-link">Learn More →</a>
                         </div>
-                        <div class="flip-card-back">
-                            <div class="back-content">
-                                <p>Transform your space with premium doors and windows that combine style, security, and energy efficiency for lasting value.</p>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Doors & Windows</h3>
+                        <p class="service-description">
+                            High-performance door and window systems. Energy efficiency meets architectural beauty 
+                            in every installation.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Landscape Design -->
-                <div class="flip-card" id="landscape-design">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartner13B.jpeg" alt="Landscape Design Services">
-                            <div class="card-overlay">
-                                <div class="card-content">
-                                    <h3>LANDSCAPE DESIGN</h3>
-                                    <p>Creative landscape design services to enhance your outdoor spaces.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="back-content">
-                                <p>Bring your vision to life with professional landscape design services that create stunning outdoor spaces tailored to your lifestyle.</p>
-                            </div>
+                <!-- Landscaping -->
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartner13B.jpeg" alt="Landscaping">
+                        <div class="service-overlay">
+                            <a href="services.html#landscaping" class="service-link">Learn More →</a>
                         </div>
                     </div>
-                </div>
-
-                <!-- Cable Company -->
-                <div class="flip-card" id="cable-company">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartner13C.jpeg" alt="Cable Manufacturer">
-                            <div class="card-overlay">
-                                <div class="card-content">
-                                    <h3>CABLE MANUFACTURER</h3>
-                                    <p>Producing UL/CSA-certified wire and cable solutions.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <div class="back-content">
-                                <p>High-performance, certified wiring solutions you can trust — delivered reliably, and built to power the innovations of tomorrow.</p>
-                                <a href="https://eracable.ai/" class="learn-more-btn" target="_blank">Learn More</a>
-                            </div>
-                        </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Landscaping</h3>
+                        <p class="service-description">
+                            Complete landscaping solutions including retaining walls, hardscaping, softscaping, and green roof installations. 
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about">
+    <!-- Process Section -->
+    <section class="process-section">
         <div class="container">
-            <div class="about-content">
-                <span class="section-label">ABOUT US</span>
-                <h2>WELCOME TO<br>JRPARTNERS</h2>
-                <p>Your trusted enterprise group delivering exceptional home solutions across six specialized divisions. From premium stone fabrication to complete interior design, we bring together expertise, quality, and innovation to transform your vision into reality.</p>
-                <div class="stats">
-                    <div class="stat-item">
-                        <span class="stat-number">6</span>
-                        <span class="stat-label">Specialized Companies</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">20+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">1000+</span>
-                        <span class="stat-label">Projects Completed</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Process Section - Animated Timeline Story -->
-    <section class="our-process">
-        <div class="container">
-            <div class="process-header">
-                <span class="section-label">OUR PROCESS</span>
-                <h2>YOUR VISION,<br>OUR SUPPORT</h2>
-                <p class="section-subtitle">Follow the journey from dream to reality through our proven storytelling process</p>
+            <div class="section-header center">
+                <span class="section-label">How We Work</span>
+                <h2 class="section-title">A Refined Process</h2>
+                <div class="title-accent"></div>
             </div>
             
-            <div class="process-timeline">
-                <div class="timeline-line">
-                    <div class="timeline-progress"></div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">Discovery</h3>
+                    <p class="step-description">
+                        Deep dive into your vision, requirements, and aspirations. We listen, analyze, and align on objectives.
+                    </p>
                 </div>
                 
-                <div class="timeline-story">
-                    <!-- Chapter 1: The Beginning -->
-                    <div class="story-chapter" data-chapter="1">
-                        <div class="chapter-marker">
-                            <div class="marker-pulse"></div>
-                            <div class="marker-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="chapter-content">
-                            <div class="chapter-badge">Step 1</div>
-                            <h3>The Discovery</h3>
-                            <p>Every great transformation begins with a conversation. We sit down with you to understand your dreams, explore possibilities, and uncover the potential hidden within your space.</p>
-                            <div class="chapter-details">
-                                <div class="detail-item">
-                                    <span class="detail-icon">🏠</span>
-                                    <span>Free in-home consultation</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">📏</span>
-                                    <span>Precise space assessment</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">💡</span>
-                                    <span>Creative vision development</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="chapter-illustration">
-                            <div class="floating-elements">
-                                <div class="float-element consultation"></div>
-                                <div class="float-element planning"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Chapter 2: The Design -->
-                    <div class="story-chapter" data-chapter="2">
-                        <div class="chapter-marker">
-                            <div class="marker-pulse"></div>
-                            <div class="marker-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polygon points="12 2 15.09 8.26 22 9 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9 8.91 8.26 12 2"></polygon>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="chapter-content">
-                            <div class="chapter-badge">Step 2</div>
-                            <h3>The Blueprint</h3>
-                            <p>Your vision takes shape through detailed designs and 3D visualizations. We craft a blueprint that perfectly balances aesthetics, functionality, and your budget.</p>
-                            <div class="chapter-details">
-                                <div class="detail-item">
-                                    <span class="detail-icon">🎨</span>
-                                    <span>3D design visualization</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">💎</span>
-                                    <span>Premium material selection</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">📊</span>
-                                    <span>Transparent cost breakdown</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="chapter-illustration">
-                            <div class="floating-elements">
-                                <div class="float-element design"></div>
-                                <div class="float-element blueprint"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Chapter 3: The Creation -->
-                    <div class="story-chapter" data-chapter="3">
-                        <div class="chapter-marker">
-                            <div class="marker-pulse"></div>
-                            <div class="marker-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="chapter-content">
-                            <div class="chapter-badge">Step 3</div>
-                            <h3>The Craftsmanship</h3>
-                            <p>Master craftsmen bring your design to life using state-of-the-art equipment and premium materials. Every detail is carefully crafted with precision and passion.</p>
-                            <div class="chapter-details">
-                                <div class="detail-item">
-                                    <span class="detail-icon">⚒️</span>
-                                    <span>Precision fabrication</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">✅</span>
-                                    <span>Quality control at every step</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">⏱️</span>
-                                    <span>Timeline coordination</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="chapter-illustration">
-                            <div class="floating-elements">
-                                <div class="float-element crafting"></div>
-                                <div class="float-element tools"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Chapter 4: The Transformation -->
-                    <div class="story-chapter" data-chapter="4">
-                        <div class="chapter-marker">
-                            <div class="marker-pulse"></div>
-                            <div class="marker-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                    <polyline points="22,4 12,14.01 9,11.01"></polyline>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="chapter-content">
-                            <div class="chapter-badge">Results</div>
-                            <h3>The Revelation</h3>
-                            <p>Professional installation ensures desired results, and your dream becomes your reality. Enjoy the beauty of your transformed space.</p>
-                            <div class="chapter-details">
-                                <div class="detail-item">
-                                    <span class="detail-icon">🔧</span>
-                                    <span>Expert installation</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">🔍</span>
-                                    <span>Final quality inspection</span>
-                                </div>
-                                <div class="detail-item">
-                                    <span class="detail-icon">📋</span>
-                                    <span>Care & maintenance guide</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="chapter-illustration">
-                            <div class="floating-elements">
-                                <div class="float-element completion"></div>
-                                <div class="float-element celebration"></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">Design</h3>
+                    <p class="step-description">
+                        Detailed planning with 3D visualization. Every detail is mapped, measured, and perfected before execution.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">Execution</h3>
+                    <p class="step-description">
+                        Precision craftsmanship with premium materials. Our teams work in coordination for seamless delivery.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3 class="step-title">Excellence</h3>
+                    <p class="step-description">
+                        Quality assurance at every stage. We don't finish until perfection is achieved and you're delighted.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
+    <!-- CTA Section -->
+    <section class="cta-section">
         <div class="container">
-            <div class="testimonials-header">
-                <span class="section-label">CLIENT TESTIMONIALS</span>
-                <h2>WHAT OUR CLIENTS<br>SAY ABOUT US</h2>
-                <p class="section-subtitle">Real feedback from satisfied customers who trusted us with their projects</p>
-            </div>
-            
-            <div class="testimonials-elegant">
-                <div class="testimonial-quote-card">
-                    <div class="quote-mark-large">"</div>
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">JRPartners transformed our kitchen beyond our expectations. Their stone fabrication work is absolutely stunning, and the custom cabinetry is flawless. Professional team, on-time delivery, and exceptional quality."</p>
-                        <div class="testimonial-author">
-                            <div class="author-name">Sarah Mitchell</div>
-                            <div class="author-title">Luxury Home Owner, Toronto</div>
-                        </div>
-                    </div>
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Space?</h2>
+                <p class="cta-description">
+                    Let's discuss how our integrated expertise can bring your project to life.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-light">Schedule Consultation</a>
+                    <a href="tel:+19057617333" class="btn btn-outline-light">Call (905) 761-7333</a>
                 </div>
-
-                <div class="testimonial-quote-card">
-                    <div class="quote-mark-large">"</div>
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">We've used JRPartners for multiple commercial projects. Their doors & windows division delivered outstanding results for our office building. Reliable, professional, and always exceed expectations."</p>
-                        <div class="testimonial-author">
-                            <div class="author-name">Michael Chen</div>
-                            <div class="author-title">Property Developer, Markham</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-quote-card">
-                    <div class="quote-mark-large">"</div>
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">The interior design team at JRPartners created our dream home. From flooring to stone retail, everything was coordinated perfectly. Their attention to detail is unmatched."</p>
-                        <div class="testimonial-author">
-                            <div class="author-name">Jennifer Rodriguez</div>
-                            <div class="author-title">Homeowner, Vaughan</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-quote-card">
-                    <div class="quote-mark-large">"</div>
-                    <div class="testimonial-content">
-                        <p class="testimonial-text">Working with your company has been a real pleasure. Your interior designers have demonstrated creativity, attention to detail, and the ability to bring our wishes to life. Our home has become a truly wonderful place!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-name">Ksenia Marchenko</div>
-                            <div class="author-title">Toronto, Canada</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Client Logos Section -->
-    <section class="client-logos">
-        <div class="container">
-            <h3>TRUSTED BY LEADING COMPANIES</h3>
-            <div class="logos-grid">
-                <div class="logo-item">
-                    <div class="logo-placeholder">LUXURY HOMES</div>
-                </div>
-                <div class="logo-item">
-                    <div class="logo-placeholder">COMMERCIAL BUILDERS</div>
-                </div>
-                <div class="logo-item">
-                    <div class="logo-placeholder">DESIGN STUDIOS</div>
-                </div>
-                <div class="logo-item">
-                    <div class="logo-placeholder">PROPERTY DEVELOPERS</div>
-                </div>
-                <div class="logo-item">
-                    <div class="logo-placeholder">CONSTRUCTION COMPANIES</div>
-                </div>
-                <div class="logo-item">
-                    <div class="logo-placeholder">ARCHITECTURE FIRMS</div>
-                </div>
-                <div class="logo-item">
-                    <div class="logo-placeholder">INTERIOR DESIGNERS</div>
-                </div>
-                <div class="logo-item">
-                    <div class="logo-placeholder">REAL ESTATE AGENCIES</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Image Section with Live Comfortably Quote -->
-    <section class="image-section">
-        <div class="full-width-image">
-            <img src="https://raw.githubusercontent.com/StoryBeeBooks/JRPartners/main/images/JRPartner4.jpeg" alt="JRPartners Showcase">
-            <div class="image-quote-overlay">
-                <h2>"Live Comfortably"</h2>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <div class="footer-logo">
-                    <div class="logo-icon">JR</div>
-                    <span class="logo-text">JRPARTNERS</span>
-                </div>
-                <p class="footer-description">Your trusted enterprise group delivering exceptional home solutions across six specialized divisions.</p>
-            </div>
+    <div id="footer-placeholder"></div>
 
-            <div class="footer-section">
-                <h3>Contact Information</h3>
-                <div class="contact-item">
-                    <strong>Email:</strong>
-                    <a href="mailto:support@jrpartners.ca">support@jrpartners.ca</a>
-                </div>
-                <div class="contact-item">
-                    <strong>Phone:</strong>
-                    <a href="tel:+16474017777">(647)401-7777</a>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <h3>Address</h3>
-                <div class="address">
-                    <p>902 Dillingham Rd.<br>Pickering, L1W 1Z6, Ontario, Canada</p>
-                </div>
-                <div class="hours">
-                    <h4>Business Hours</h4>
-                    <p>Monday – Saturday<br>9am – 5pm</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <div class="footer-copyright">
-                <p>&copy; 2025 JR Partners. All Rights Reserved.</p>
-            </div>
-            <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <span class="separator">|</span>
-                <a href="terms.html">Terms of Service</a>
-                <span class="separator">|</span>
-                <a href="cookies.html">Cookie Policy</a>
-                <span class="separator">|</span>
-                <a href="disclaimer.html">Disclaimer</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Cookies Consent Bar -->
-    <div class="cookie-consent-bar" id="cookieConsent">
-        <div class="cookie-content">
-            <p>We use cookies to make your browsing smoother, show you more relevant content, and understand how our site is used. By closing this message or continuing to use our site, you agree to our use of cookies as explained in our <a href="cookies.html">Cookie Policy</a> and <a href="privacy.html">Privacy Policy</a>.</p>
-            <button class="cookie-close-btn" id="cookieCloseBtn" onclick="closeCookieConsent(); return false;" type="button">&times;</button>
-        </div>
-    </div>
-
-    <script>
-    // Enhanced flip card functionality - optimized for mobile touch and desktop hover
-    document.addEventListener('DOMContentLoaded', function() {
-        const flipCards = document.querySelectorAll('.flip-card');
-        
-        flipCards.forEach(card => {
-            let isFlipped = false;
-            const inner = card.querySelector('.flip-card-inner');
-            let touchStarted = false;
-            
-            // Check if device supports hover (desktop/laptop)
-            const supportsHover = window.matchMedia('(hover: hover)').matches;
-            
-            if (!supportsHover) {
-                // Mobile/touch devices - optimized touch handling without preventing scroll
-                let touchStartY = 0;
-                let touchMoved = false;
-                
-                card.addEventListener('touchstart', function(e) {
-                    // Don't flip if touching a button or link
-                    if (e.target.tagName === 'A' || e.target.closest('a') || 
-                        e.target.tagName === 'BUTTON' || e.target.closest('button')) {
-                        return;
-                    }
-                    touchStarted = true;
-                    touchStartY = e.touches[0].clientY;
-                    touchMoved = false;
-                }, { passive: true });
-                
-                card.addEventListener('touchmove', function(e) {
-                    if (touchStarted) {
-                        const touchCurrentY = e.touches[0].clientY;
-                        const touchDifference = Math.abs(touchCurrentY - touchStartY);
-                        
-                        // If user moved more than 10px, consider it scrolling
-                        if (touchDifference > 10) {
-                            touchMoved = true;
-                        }
-                    }
-                }, { passive: true });
-                
-                card.addEventListener('touchend', function(e) {
-                    // Don't flip if touching a button or link
-                    if (e.target.tagName === 'A' || e.target.closest('a') || 
-                        e.target.tagName === 'BUTTON' || e.target.closest('button')) {
-                        return;
-                    }
-                    
-                    // Only flip if touch didn't move (not scrolling)
-                    if (touchStarted && !touchMoved) {
-                        e.preventDefault();
-                        toggleFlip();
-                    }
-                    
-                    touchStarted = false;
-                    touchMoved = false;
-                }, { passive: false });
-                
-                // Fallback click event for mobile browsers (passive to allow scrolling)
-                card.addEventListener('click', function(e) {
-                    // Don't flip if clicking on a button or link
-                    if (e.target.tagName === 'A' || e.target.closest('a') || 
-                        e.target.tagName === 'BUTTON' || e.target.closest('button')) {
-                        return;
-                    }
-                    
-                    // Only prevent default if we're sure it's not part of scrolling
-                    if (!touchMoved) {
-                        e.preventDefault();
-                        toggleFlip();
-                    }
-                });
-                
-            } else {
-                // Desktop devices - hover + click functionality
-                card.addEventListener('click', function(e) {
-                    // Don't flip if clicking on a button or link
-                    if (e.target.tagName === 'A' || e.target.closest('a') || 
-                        e.target.tagName === 'BUTTON' || e.target.closest('button')) {
-                        return;
-                    }
-                    e.preventDefault();
-                    toggleFlip();
-                });
-                
-                // Reset on mouse leave if not permanently flipped
-                card.addEventListener('mouseleave', function() {
-                    if (!isFlipped) {
-                        inner.style.transform = 'rotateY(0deg)';
-                    }
-                });
-            }
-            
-            function toggleFlip() {
-                if (isFlipped) {
-                    inner.style.transform = 'rotateY(0deg)';
-                    inner.style.zIndex = '1';
-                    isFlipped = false;
-                } else {
-                    inner.style.transform = 'rotateY(180deg)';
-                    inner.style.zIndex = '2';
-                    isFlipped = true;
-                }
-            }
-        });
-        
-        // Ensure buttons and links are always clickable (but exclude cookie close button)
-        document.addEventListener('click', function(e) {
-            // Don't interfere with cookie close button
-            if (e.target.id === 'cookieCloseBtn' || e.target.closest('#cookieCloseBtn')) {
-                return;
-            }
-            
-            if (e.target.tagName === 'A' || e.target.closest('a') || 
-                e.target.tagName === 'BUTTON' || e.target.closest('button')) {
-                e.stopPropagation();
-            }
-        }, true);
-        
-        // Cookie consent functionality - check if user has already given consent
-        const consentGiven = localStorage.getItem('cookieConsent');
-        if (consentGiven === 'accepted') {
-            document.getElementById('cookieConsent').style.display = 'none';
-        }
-        
-        // Cookie close button handled by onclick attribute
-    });
-    
-    // Cookie consent functionality
-    function closeCookieConsent() {
-        const consentBar = document.getElementById('cookieConsent');
-        if (consentBar) {
-            consentBar.style.display = 'none';
-            localStorage.setItem('cookieConsent', 'accepted');
-        }
-        return false;
-    }
-    
-    // Make function globally available
-    window.closeCookieConsent = closeCookieConsent;
-    
-    // Loading Screen Animation - iOS Compatible
-    function initLoadingScreen() {
-        const loadingScreen = document.getElementById('loadingScreen');
-        const loadingProgress = document.getElementById('loadingProgress');
-        
-        if (!loadingScreen || !loadingProgress) return;
-        
-        // Force hardware acceleration for iOS
-        loadingScreen.style.transform = 'translateZ(0)';
-        loadingScreen.style.webkitTransform = 'translateZ(0)';
-        
-        let progress = 0;
-        let isComplete = false;
-        
-        const updateProgress = () => {
-            if (isComplete) return;
-            
-            progress += Math.random() * 12 + 8;
-            
-            if (progress >= 100) {
-                progress = 100;
-                isComplete = true;
-                loadingProgress.style.width = '100%';
-                
-                // Use requestAnimationFrame for smoother transitions on iOS
-                requestAnimationFrame(() => {
-                    setTimeout(() => {
-                        hideLoadingScreen();
-                    }, 300);
-                });
-            } else {
-                loadingProgress.style.width = progress + '%';
-                setTimeout(updateProgress, 150);
-            }
-        };
-        
-        function hideLoadingScreen() {
-            loadingScreen.classList.add('hidden');
-            document.body.classList.remove('loading');
-            
-            // Additional iOS fix
-            setTimeout(() => {
-                if (loadingScreen.parentNode) {
-                    loadingScreen.style.display = 'none';
-                }
-            }, 800);
-        }
-        
-        // Start progress animation
-        setTimeout(updateProgress, 100);
-        
-        // Fallback: Hide loading screen after maximum time
-        setTimeout(() => {
-            if (!isComplete) {
-                hideLoadingScreen();
-            }
-        }, 4000);
-        
-        // Hide loading screen on page load complete
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                hideLoadingScreen();
-            }, 1000);
-        });
-        
-        // Additional iOS/touch device support
-        document.addEventListener('touchstart', () => {
-            // Trigger hardware acceleration on first touch
-        }, { once: true, passive: true });
-    }
-    
-    // Scroll Progress Indicator
-    function initScrollProgress() {
-        const scrollProgressBar = document.getElementById('scrollProgressBar');
-        
-        if (!scrollProgressBar) return;
-        
-        function updateScrollProgress() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercent = (scrollTop / scrollHeight) * 100;
-            
-            scrollProgressBar.style.width = Math.min(scrollPercent, 100) + '%';
-        }
-        
-        let ticking = false;
-        function handleScrollProgress() {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    updateScrollProgress();
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        }
-        
-        window.addEventListener('scroll', handleScrollProgress);
-        updateScrollProgress();
-    }
-    
-    // Page Transitions
-    function initPageTransitions() {
-        const pageTransition = document.getElementById('pageTransition');
-        
-        if (!pageTransition) return;
-        
-        // Smooth scroll to sections
-        const navLinks = document.querySelectorAll('a[href^="#"]');
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                
-                if (targetElement) {
-                    pageTransition.classList.add('active');
-                    
-                    setTimeout(() => {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                        
-                        setTimeout(() => {
-                            pageTransition.classList.remove('active');
-                        }, 300);
-                    }, 300);
-                }
-            });
-        });
-        
-        // Add section transition effects
-        const sections = document.querySelectorAll('section');
-        sections.forEach((section, index) => {
-            section.classList.add('section-transition');
-            
-            // Stagger the initial appearance
-            setTimeout(() => {
-                section.classList.add('visible');
-            }, index * 200);
-        });
-    }
-    
-    // Enhanced Section Reveals
-    function initSectionReveals() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-        
-        const sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    
-                    // Trigger any child animations
-                    const childElements = entry.target.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-scale');
-                    childElements.forEach((child, index) => {
-                        setTimeout(() => {
-                            child.classList.add('revealed');
-                        }, index * 100);
-                    });
-                }
-            });
-        }, observerOptions);
-        
-        const sections = document.querySelectorAll('section');
-        sections.forEach(section => {
-            sectionObserver.observe(section);
-        });
-    }
-    
-    // Parallax scrolling effect
-    // Parallax scrolling effect
-    function initParallax() {
-        const navbar = document.querySelector('.navbar');
-        
-        if (!navbar) return;
-        
-        function updateParallax() {
-            const scrolled = window.pageYOffset;
-            
-            // Enhanced navbar on scroll
-            if (scrolled > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        }
-        
-        // Throttled scroll handler for better performance
-        let ticking = false;
-        function handleScroll() {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    updateParallax();
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        }
-        
-        window.addEventListener('scroll', handleScroll);
-        updateParallax(); // Initial call
-    }
-    
-    // Scroll-triggered animations
-    function initScrollAnimations() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                }
-            });
-        }, observerOptions);
-        
-        // Add scroll reveal classes to elements and observe them
-        const elementsToReveal = [
-            '.companies h2',
-            '.companies .section-subtitle',
-            '.flip-card',
-            '.about .section-label',
-            '.about h2',
-            '.about p',
-            '.stat-item',
-            '.testimonials-header',
-            '.testimonial-card',
-            '.client-logos h3',
-            '.logo-item'
-        ];
-        
-        elementsToReveal.forEach((selector, index) => {
-            const elements = document.querySelectorAll(selector);
-            elements.forEach((element, elementIndex) => {
-                // Add appropriate reveal class based on element type
-                if (selector.includes('flip-card')) {
-                    element.classList.add('scroll-reveal-scale');
-                } else if (elementIndex % 2 === 0) {
-                    element.classList.add('scroll-reveal-left');
-                } else {
-                    element.classList.add('scroll-reveal-right');
-                }
-                
-                observer.observe(element);
-            });
-        });
-        
-        // Special handling for stats
-        const stats = document.querySelectorAll('.stat-item');
-        stats.forEach((stat, index) => {
-            stat.classList.add('scroll-reveal');
-            observer.observe(stat);
-        });
-    }
-    
-    // Enhanced hover effects
-    function initAdvancedHoverEffects() {
-        // Magnetic effect for buttons
-        const magneticElements = document.querySelectorAll('.learn-more-btn, .logo-item');
-        
-        magneticElements.forEach(element => {
-            element.addEventListener('mousemove', (e) => {
-                const rect = element.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                
-                element.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
-            });
-            
-            element.addEventListener('mouseleave', () => {
-                element.style.transform = 'translate(0, 0)';
-            });
-        });
-        
-        // Enhanced flip card interactions
-        const flipCards = document.querySelectorAll('.flip-card');
-        flipCards.forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width;
-                const y = (e.clientY - rect.top) / rect.height;
-                
-                const rotateX = (y - 0.5) * 10;
-                const rotateY = (x - 0.5) * -10;
-                
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
-            });
-        });
-    }
-    
-    // Testimonials functionality
-    function initTestimonials() {
-        const testimonialCards = document.querySelectorAll('.testimonial-card');
-        let currentIndex = 0;
-        
-        if (testimonialCards.length === 0) return;
-        
-        // Add entrance animation
-        testimonialCards.forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            
-            setTimeout(() => {
-                card.style.transition = 'all 0.6s ease';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, index * 200);
-        });
-        
-        // Add subtle highlighting effect
-        function highlightTestimonial(index) {
-            testimonialCards.forEach((card, i) => {
-                if (i === index) {
-                    card.style.background = 'rgba(201, 169, 97, 0.08)';
-                    card.style.borderColor = '#c9a961';
-                } else {
-                    card.style.background = 'rgba(255, 255, 255, 0.03)';
-                    card.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                }
-            });
-        }
-        
-        // Auto-highlight testimonials
-        function rotateHighlight() {
-            highlightTestimonial(currentIndex);
-            currentIndex = (currentIndex + 1) % testimonialCards.length;
-        }
-        
-        // Start rotation
-        rotateHighlight();
-        setInterval(rotateHighlight, 4000); // Change every 4 seconds
-    }
-    
-    // Our Process Timeline Story Animation
-    function initProcessAnimations() {
-        const processSection = document.querySelector('.our-process');
-        const timelineProgress = document.querySelector('.timeline-progress');
-        const storyChapters = document.querySelectorAll('.story-chapter');
-        const processHeader = document.querySelector('.process-header');
-        const processFinale = document.querySelector('.process-finale');
-        
-        if (!processSection || !storyChapters.length) return;
-        
-        let chaptersAnimated = [];
-        let timelineAnimated = false;
-        
-        // Timeline progress animation based on scroll
-        function updateTimelineProgress() {
-            if (!timelineProgress) return;
-            
-            const sectionRect = processSection.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-            
-            // Calculate scroll progress through the section
-            let progress = 0;
-            if (sectionRect.top < windowHeight && sectionRect.bottom > 0) {
-                const visibleHeight = Math.min(windowHeight - Math.max(sectionRect.top, 0), sectionRect.height);
-                progress = visibleHeight / sectionRect.height;
-                progress = Math.min(Math.max(progress, 0), 1);
-            }
-            
-            timelineProgress.style.height = `${progress * 100}%`;
-            
-            // Animate header when section comes into view
-            if (progress > 0.1 && processHeader && !timelineAnimated) {
-                processHeader.style.opacity = '1';
-                processHeader.style.transform = 'translateY(0)';
-                timelineAnimated = true;
-            }
-        }
-        
-        // Chapter reveal observer
-        const chapterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const chapter = entry.target;
-                    const chapterIndex = Array.from(storyChapters).indexOf(chapter);
-                    
-                    if (!chaptersAnimated.includes(chapterIndex)) {
-                        chaptersAnimated.push(chapterIndex);
-                        
-                        // Animate chapter entrance
-                        setTimeout(() => {
-                            chapter.classList.add('animate-in');
-                            
-                            // Animate marker pulse
-                            const markerPulse = chapter.querySelector('.marker-pulse');
-                            if (markerPulse) {
-                                markerPulse.style.animation = 'markerPulse 3s infinite';
-                            }
-                            
-                            // Animate detail items
-                            const detailItems = chapter.querySelectorAll('.detail-item');
-                            detailItems.forEach((item, index) => {
-                                setTimeout(() => {
-                                    item.style.opacity = '1';
-                                    item.style.transform = 'translateX(0)';
-                                }, index * 200);
-                            });
-                            
-                            // Animate floating elements
-                            const floatingElements = chapter.querySelectorAll('.float-element');
-                            floatingElements.forEach((element, index) => {
-                                setTimeout(() => {
-                                    element.style.opacity = '0.6';
-                                    element.style.transform = 'scale(1)';
-                                }, index * 300);
-                            });
-                            
-                        }, chapterIndex * 300);
-                    }
-                }
-            });
-        }, {
-            threshold: 0.3,
-            rootMargin: '0px 0px -100px 0px'
-        });
-        
-        // Finale observer
-        const finaleObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && processFinale) {
-                    processFinale.style.opacity = '1';
-                    processFinale.style.transform = 'translateY(0)';
-                    
-                    // Animate CTA buttons
-                    const ctaButtons = processFinale.querySelectorAll('.story-cta');
-                    ctaButtons.forEach((button, index) => {
-                        setTimeout(() => {
-                            button.style.opacity = '1';
-                            button.style.transform = 'translateY(0) scale(1)';
-                        }, index * 200);
-                    });
-                    
-                    finaleObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.2
-        });
-        
-        // Initialize observers
-        storyChapters.forEach(chapter => chapterObserver.observe(chapter));
-        if (processFinale) finaleObserver.observe(processFinale);
-        
-        // Scroll listener for timeline progress
-        let ticking = false;
-        function handleScroll() {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    updateTimelineProgress();
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        }
-        
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        
-        // Initial setup - hide elements
-        if (processHeader) {
-            processHeader.style.opacity = '0';
-            processHeader.style.transform = 'translateY(30px)';
-            processHeader.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-        }
-        
-        if (processFinale) {
-            processFinale.style.opacity = '0';
-            processFinale.style.transform = 'translateY(30px)';
-            processFinale.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-            
-            // Hide CTA buttons initially
-            const ctaButtons = processFinale.querySelectorAll('.story-cta');
-            ctaButtons.forEach(button => {
-                button.style.opacity = '0';
-                button.style.transform = 'translateY(20px) scale(0.9)';
-                button.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-            });
-        }
-        
-        // Hide detail items and floating elements initially
-        storyChapters.forEach(chapter => {
-            const detailItems = chapter.querySelectorAll('.detail-item');
-            detailItems.forEach(item => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateX(-20px)';
-                item.style.transition = 'all 0.5s ease';
-            });
-            
-            const floatingElements = chapter.querySelectorAll('.float-element');
-            floatingElements.forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'scale(0)';
-                element.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-            });
-        });
-        
-        // Enhanced hover effects for chapters
-        storyChapters.forEach(chapter => {
-            const chapterContent = chapter.querySelector('.chapter-content');
-            const markerIcon = chapter.querySelector('.marker-icon');
-            
-            chapter.addEventListener('mouseenter', () => {
-                if (markerIcon) {
-                    markerIcon.style.transform = 'scale(1.2)';
-                    markerIcon.style.boxShadow = '0 15px 40px rgba(255, 215, 0, 0.6)';
-                }
-            });
-            
-            chapter.addEventListener('mouseleave', () => {
-                if (markerIcon) {
-                    markerIcon.style.transform = 'scale(1)';
-                    markerIcon.style.boxShadow = '0 10px 30px rgba(255, 215, 0, 0.4)';
-                }
-            });
-        });
-        
-        // Enhanced CTA interactions
-        const ctaButtons = document.querySelectorAll('.story-cta');
-        ctaButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                // Create ripple effect
-                const rect = button.getBoundingClientRect();
-                const ripple = document.createElement('div');
-                const size = Math.max(rect.width, rect.height);
-                
-                ripple.style.position = 'absolute';
-                ripple.style.borderRadius = '50%';
-                ripple.style.background = 'rgba(255, 255, 255, 0.3)';
-                ripple.style.transform = 'scale(0)';
-                ripple.style.animation = 'ripple 0.8s linear';
-                ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-                ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
-                ripple.style.width = size + 'px';
-                ripple.style.height = size + 'px';
-                ripple.style.pointerEvents = 'none';
-                
-                button.style.position = 'relative';
-                button.style.overflow = 'hidden';
-                button.appendChild(ripple);
-                
-                setTimeout(() => {
-                    ripple.remove();
-                }, 800);
-            });
-        });
-        
-        // Initial call
-        updateTimelineProgress();
-    }
-
-    // Initialize all effects when DOM is ready
-    function initAllEffects() {
-        initWireframeInterior();
-        initCompanyNames();
-        initLoadingScreen();
-        initScrollProgress();
-        initPageTransitions();
-        initSectionReveals();
-        initParallax();
-        initScrollAnimations();
-        initAdvancedHoverEffects();
-        initTestimonials();
-        initProcessAnimations();
-    }
-
-    // Rotating Company Names Carousel with Brightness Effect
-    function initCompanyNames() {
-        const container = document.getElementById('companyNames');
-        if (!container) return;
-
-        const companies = [
-            'HILTON',
-            'MARRIOTT',
-            'MENKES',
-            'WYNDHAM',
-            'INTERCONTINENTAL',
-            'CHOICE',
-            'MATTAMY',
-            'CONCORD',
-            'TRIDEL',
-            'DANIELS'
-        ];
-
-        // Create seamless scrolling track
-        function createCarousel() {
-            container.innerHTML = '';
-
-            const track = document.createElement('div');
-            track.className = 'company-names-track';
-
-            // Duplicate companies array for seamless loop
-            const doubledCompanies = [...companies, ...companies];
-
-            doubledCompanies.forEach(company => {
-                const element = document.createElement('div');
-                element.className = 'company-name';
-                element.textContent = company;
-                track.appendChild(element);
-            });
-
-            container.appendChild(track);
-
-            // Apply brightness gradient effect based on position
-            applyBrightnessEffect();
-        }
-
-        // Dynamic brightness based on horizontal position
-        function applyBrightnessEffect() {
-            const track = container.querySelector('.company-names-track');
-            if (!track) return;
-
-            const elements = track.querySelectorAll('.company-name');
-
-            function updateBrightness() {
-                const containerRect = container.getBoundingClientRect();
-                const centerX = containerRect.left + containerRect.width / 2;
-                const fadeRange = containerRect.width * 0.35;
-
-                elements.forEach(element => {
-                    const rect = element.getBoundingClientRect();
-                    const elementCenterX = rect.left + rect.width / 2;
-                    const distanceFromCenter = Math.abs(elementCenterX - centerX);
-
-                    // Calculate brightness: max in center, fade at edges
-                    let brightness;
-                    if (distanceFromCenter < fadeRange) {
-                        brightness = 1 - (distanceFromCenter / fadeRange) * 0.7;
-                    } else {
-                        brightness = 0.3;
-                    }
-
-                    // Apply opacity based on brightness
-                    element.style.opacity = brightness * 0.35;
-                });
-
-                requestAnimationFrame(updateBrightness);
-            }
-
-            updateBrightness();
-        }
-
-        // Initial creation
-        createCarousel();
-
-        // Recreate on resize
-        let resizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                createCarousel();
-            }, 300);
-        });
-    }
-
-    // Interactive Wireframe Interior Scene
-    function initWireframeInterior() {
-        const canvas = document.getElementById('wireframeCanvas');
-        if (!canvas) return;
-
-        const ctx = canvas.getContext('2d');
-        let width, height, centerX, centerY;
-        let animationProgress = 0;
-        let mouseX = 0, mouseY = 0;
-        let targetMouseX = 0, targetMouseY = 0;
-
-        // Set canvas size
-        function resizeCanvas() {
-            width = window.innerWidth;
-            height = window.innerHeight;
-            canvas.width = width;
-            canvas.height = height;
-            centerX = width / 2;
-            
-            // Adjust vertical centering based on viewport size
-            // On mobile, shift scene down significantly to fill the space better
-            if (width <= 480) {
-                // Small mobile: title at 50px, companies at 120px from bottom
-                // Shift scene down to fill the large middle area
-                centerY = height / 2 + 40;
-            } else if (width <= 768) {
-                // Mobile: title at 60px, companies at 140px from bottom
-                // Shift down more to fill gap
-                centerY = height / 2 + 50;
-            } else if (width <= 1024) {
-                // Tablet: balanced spacing
-                centerY = height / 2 + 20;
-            } else {
-                // Desktop: balanced between title (100px) and companies (50px)
-                centerY = height / 2 + 25;
-            }
-        }
-        resizeCanvas();
-
-        // Mouse tracking with smooth interpolation
-        canvas.addEventListener('mousemove', (e) => {
-            targetMouseX = (e.clientX / width - 0.5) * 2;
-            targetMouseY = (e.clientY / height - 0.5) * 2;
-        });
-
-        canvas.addEventListener('touchmove', (e) => {
-            if (e.touches.length > 0) {
-                targetMouseX = (e.touches[0].clientX / width - 0.5) * 2;
-                targetMouseY = (e.touches[0].clientY / height - 0.5) * 2;
-            }
-        }, { passive: true });
-
-        // 3D to 2D projection
-        function project3D(x, y, z, rotX, rotY) {
-            // Apply rotation
-            const cosX = Math.cos(rotX);
-            const sinX = Math.sin(rotX);
-            const cosY = Math.cos(rotY);
-            const sinY = Math.sin(rotY);
-
-            // Rotate around Y axis
-            let tempZ = z * cosY - x * sinY;
-            let tempX = z * sinY + x * cosY;
-            z = tempZ;
-            x = tempX;
-
-            // Rotate around X axis
-            let tempY = y * cosX - z * sinX;
-            tempZ = y * sinX + z * cosX;
-            y = tempY;
-            z = tempZ;
-
-            // Perspective projection
-            const perspective = 800;
-            const scale = perspective / (perspective + z);
-            
-            return {
-                x: centerX + x * scale,
-                y: centerY + y * scale,
-                scale: scale
-            };
-        }
-
-        // Draw a line between two 3D points
-        function drawLine3D(x1, y1, z1, x2, y2, z2, rotX, rotY, progress, opacity = 1) {
-            const p1 = project3D(x1, y1, z1, rotX, rotY);
-            const p2 = project3D(x2, y2, z2, rotX, rotY);
-            
-            if (progress <= 0) return;
-            
-            const actualProgress = Math.min(progress, 1);
-            const endX = p1.x + (p2.x - p1.x) * actualProgress;
-            const endY = p1.y + (p2.y - p1.y) * actualProgress;
-            
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(endX, endY);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.7 * opacity * Math.min(p1.scale, p2.scale)})`;
-            ctx.lineWidth = 1.5 * Math.min(p1.scale, p2.scale);
-            ctx.stroke();
-        }
-
-        // Draw accent line (gold)
-        function drawAccentLine3D(x1, y1, z1, x2, y2, z2, rotX, rotY, progress, opacity = 1) {
-            const p1 = project3D(x1, y1, z1, rotX, rotY);
-            const p2 = project3D(x2, y2, z2, rotX, rotY);
-            
-            if (progress <= 0) return;
-            
-            const actualProgress = Math.min(progress, 1);
-            const endX = p1.x + (p2.x - p1.x) * actualProgress;
-            const endY = p1.y + (p2.y - p1.y) * actualProgress;
-            
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(endX, endY);
-            ctx.strokeStyle = `rgba(201, 169, 97, ${0.9 * opacity * Math.min(p1.scale, p2.scale)})`;
-            ctx.lineWidth = 2 * Math.min(p1.scale, p2.scale);
-            ctx.stroke();
-        }
-
-        // Beautiful home interior room structure
-        function drawInterior(rotX, rotY, progress) {
-            // Scale room based on viewport width for better mobile visibility
-            let scaleFactor = 1;
-            if (width <= 480) {
-                scaleFactor = 1.4; // 40% larger on small mobile
-            } else if (width <= 768) {
-                scaleFactor = 1.3; // 30% larger on mobile
-            } else if (width <= 1024) {
-                scaleFactor = 1.15; // 15% larger on tablet
-            }
-
-            const roomWidth = 400 * scaleFactor;
-            const roomHeight = 300 * scaleFactor;
-            const roomDepth = 400 * scaleFactor;
-
-            // Calculate progress stages
-            const stage1 = Math.max(0, Math.min(1, progress * 4)); // Floor and walls
-            const stage2 = Math.max(0, Math.min(1, (progress - 0.25) * 4)); // Window and door frames
-            const stage3 = Math.max(0, Math.min(1, (progress - 0.5) * 4)); // Furniture outlines
-            const stage4 = Math.max(0, Math.min(1, (progress - 0.75) * 4)); // Details
-
-            // Floor
-            drawLine3D(-roomWidth/2, roomHeight/2, -roomDepth/2, roomWidth/2, roomHeight/2, -roomDepth/2, rotX, rotY, stage1);
-            drawLine3D(roomWidth/2, roomHeight/2, -roomDepth/2, roomWidth/2, roomHeight/2, roomDepth/2, rotX, rotY, stage1);
-            drawLine3D(roomWidth/2, roomHeight/2, roomDepth/2, -roomWidth/2, roomHeight/2, roomDepth/2, rotX, rotY, stage1);
-            drawLine3D(-roomWidth/2, roomHeight/2, roomDepth/2, -roomWidth/2, roomHeight/2, -roomDepth/2, rotX, rotY, stage1);
-
-            // Ceiling
-            drawLine3D(-roomWidth/2, -roomHeight/2, -roomDepth/2, roomWidth/2, -roomHeight/2, -roomDepth/2, rotX, rotY, stage1);
-            drawLine3D(roomWidth/2, -roomHeight/2, -roomDepth/2, roomWidth/2, -roomHeight/2, roomDepth/2, rotX, rotY, stage1);
-            drawLine3D(roomWidth/2, -roomHeight/2, roomDepth/2, -roomWidth/2, -roomHeight/2, roomDepth/2, rotX, rotY, stage1);
-            drawLine3D(-roomWidth/2, -roomHeight/2, roomDepth/2, -roomWidth/2, -roomHeight/2, -roomDepth/2, rotX, rotY, stage1);
-
-            // Back wall vertical edges
-            drawLine3D(-roomWidth/2, -roomHeight/2, -roomDepth/2, -roomWidth/2, roomHeight/2, -roomDepth/2, rotX, rotY, stage1);
-            drawLine3D(roomWidth/2, -roomHeight/2, -roomDepth/2, roomWidth/2, roomHeight/2, -roomDepth/2, rotX, rotY, stage1);
-
-            // Left wall vertical edges
-            drawLine3D(-roomWidth/2, -roomHeight/2, roomDepth/2, -roomWidth/2, roomHeight/2, roomDepth/2, rotX, rotY, stage1);
-
-            // Right wall vertical edges
-            drawLine3D(roomWidth/2, -roomHeight/2, roomDepth/2, roomWidth/2, roomHeight/2, roomDepth/2, rotX, rotY, stage1);
-
-            // Large window on back wall (accent lines)
-            const windowWidth = 200;
-            const windowHeight = 150;
-            const windowY = 0;
-            const windowZ = -roomDepth/2 + 1;
-
-            // Window frame
-            drawAccentLine3D(-windowWidth/2, -windowHeight/2, windowZ, windowWidth/2, -windowHeight/2, windowZ, rotX, rotY, stage2);
-            drawAccentLine3D(windowWidth/2, -windowHeight/2, windowZ, windowWidth/2, windowHeight/2, windowZ, rotX, rotY, stage2);
-            drawAccentLine3D(windowWidth/2, windowHeight/2, windowZ, -windowWidth/2, windowHeight/2, windowZ, rotX, rotY, stage2);
-            drawAccentLine3D(-windowWidth/2, windowHeight/2, windowZ, -windowWidth/2, -windowHeight/2, windowZ, rotX, rotY, stage2);
-
-            // Window panes (cross)
-            drawLine3D(0, -windowHeight/2, windowZ, 0, windowHeight/2, windowZ, rotX, rotY, stage2);
-            drawLine3D(-windowWidth/2, 0, windowZ, windowWidth/2, 0, windowZ, rotX, rotY, stage2);
-
-            // Door frame on left wall
-            const doorWidth = 80;
-            const doorHeight = 180;
-            const doorX = -roomWidth/2 + 1;
-            const doorZ = 0;
-
-            drawAccentLine3D(doorX, roomHeight/2, doorZ - doorWidth/2, doorX, roomHeight/2 - doorHeight, doorZ - doorWidth/2, rotX, rotY, stage2);
-            drawAccentLine3D(doorX, roomHeight/2 - doorHeight, doorZ - doorWidth/2, doorX, roomHeight/2 - doorHeight, doorZ + doorWidth/2, rotX, rotY, stage2);
-            drawAccentLine3D(doorX, roomHeight/2 - doorHeight, doorZ + doorWidth/2, doorX, roomHeight/2, doorZ + doorWidth/2, rotX, rotY, stage2);
-
-            // Modern sofa (right side)
-            const sofaW = 150, sofaH = 60, sofaD = 80;
-            const sofaX = 120, sofaY = roomHeight/2 - sofaH/2, sofaZ = 50;
-
-            // Sofa base
-            drawLine3D(sofaX - sofaW/2, sofaY, sofaZ - sofaD/2, sofaX + sofaW/2, sofaY, sofaZ - sofaD/2, rotX, rotY, stage3);
-            drawLine3D(sofaX + sofaW/2, sofaY, sofaZ - sofaD/2, sofaX + sofaW/2, sofaY, sofaZ + sofaD/2, rotX, rotY, stage3);
-            drawLine3D(sofaX + sofaW/2, sofaY, sofaZ + sofaD/2, sofaX - sofaW/2, sofaY, sofaZ + sofaD/2, rotX, rotY, stage3);
-            drawLine3D(sofaX - sofaW/2, sofaY, sofaZ + sofaD/2, sofaX - sofaW/2, sofaY, sofaZ - sofaD/2, rotX, rotY, stage3);
-
-            // Sofa back
-            drawLine3D(sofaX - sofaW/2, sofaY - sofaH, sofaZ + sofaD/2, sofaX + sofaW/2, sofaY - sofaH, sofaZ + sofaD/2, rotX, rotY, stage3);
-            drawLine3D(sofaX - sofaW/2, sofaY, sofaZ + sofaD/2, sofaX - sofaW/2, sofaY - sofaH, sofaZ + sofaD/2, rotX, rotY, stage3);
-            drawLine3D(sofaX + sofaW/2, sofaY, sofaZ + sofaD/2, sofaX + sofaW/2, sofaY - sofaH, sofaZ + sofaD/2, rotX, rotY, stage3);
-
-            // Coffee table (center)
-            const tableW = 100, tableH = 30, tableD = 60;
-            const tableX = 0, tableY = roomHeight/2 - tableH - 20, tableZ = 80;
-
-            drawLine3D(tableX - tableW/2, tableY, tableZ - tableD/2, tableX + tableW/2, tableY, tableZ - tableD/2, rotX, rotY, stage3);
-            drawLine3D(tableX + tableW/2, tableY, tableZ - tableD/2, tableX + tableW/2, tableY, tableZ + tableD/2, rotX, rotY, stage3);
-            drawLine3D(tableX + tableW/2, tableY, tableZ + tableD/2, tableX - tableW/2, tableY, tableZ + tableD/2, rotX, rotY, stage3);
-            drawLine3D(tableX - tableW/2, tableY, tableZ + tableD/2, tableX - tableW/2, tableY, tableZ - tableD/2, rotX, rotY, stage3);
-
-            // Table legs
-            drawLine3D(tableX - tableW/2 + 10, tableY, tableZ - tableD/2 + 10, tableX - tableW/2 + 10, tableY + tableH, tableZ - tableD/2 + 10, rotX, rotY, stage3);
-            drawLine3D(tableX + tableW/2 - 10, tableY, tableZ - tableD/2 + 10, tableX + tableW/2 - 10, tableY + tableH, tableZ - tableD/2 + 10, rotX, rotY, stage3);
-            drawLine3D(tableX - tableW/2 + 10, tableY, tableZ + tableD/2 - 10, tableX - tableW/2 + 10, tableY + tableH, tableZ + tableD/2 - 10, rotX, rotY, stage3);
-            drawLine3D(tableX + tableW/2 - 10, tableY, tableZ + tableD/2 - 10, tableX + tableW/2 - 10, tableY + tableH, tableZ + tableD/2 - 10, rotX, rotY, stage3);
-
-            // Modern chair (left side)
-            const chairW = 60, chairH = 80, chairD = 60;
-            const chairX = -140, chairY = roomHeight/2 - chairH/2, chairZ = 100;
-
-            drawLine3D(chairX - chairW/2, chairY, chairZ - chairD/2, chairX + chairW/2, chairY, chairZ - chairD/2, rotX, rotY, stage3);
-            drawLine3D(chairX + chairW/2, chairY, chairZ - chairD/2, chairX + chairW/2, chairY, chairZ + chairD/2, rotX, rotY, stage3);
-            drawLine3D(chairX + chairW/2, chairY, chairZ + chairD/2, chairX - chairW/2, chairY, chairZ + chairD/2, rotX, rotY, stage3);
-            drawLine3D(chairX - chairW/2, chairY, chairZ + chairD/2, chairX - chairW/2, chairY, chairZ - chairD/2, rotX, rotY, stage3);
-
-            // Chair back
-            drawLine3D(chairX - chairW/2, chairY - chairH + 30, chairZ + chairD/2, chairX + chairW/2, chairY - chairH + 30, chairZ + chairD/2, rotX, rotY, stage3);
-            drawLine3D(chairX - chairW/2, chairY, chairZ + chairD/2, chairX - chairW/2, chairY - chairH + 30, chairZ + chairD/2, rotX, rotY, stage3);
-            drawLine3D(chairX + chairW/2, chairY, chairZ + chairD/2, chairX + chairW/2, chairY - chairH + 30, chairZ + chairD/2, rotX, rotY, stage3);
-
-            // Decorative pendant light
-            const lightX = 0, lightY = -roomHeight/2 + 40, lightZ = 0;
-            drawAccentLine3D(lightX, -roomHeight/2, lightZ, lightX, lightY, lightZ, rotX, rotY, stage4);
-            drawLine3D(lightX - 25, lightY, lightZ - 25, lightX + 25, lightY, lightZ - 25, rotX, rotY, stage4);
-            drawLine3D(lightX + 25, lightY, lightZ - 25, lightX + 25, lightY, lightZ + 25, rotX, rotY, stage4);
-            drawLine3D(lightX + 25, lightY, lightZ + 25, lightX - 25, lightY, lightZ + 25, rotX, rotY, stage4);
-            drawLine3D(lightX - 25, lightY, lightZ + 25, lightX - 25, lightY, lightZ - 25, rotX, rotY, stage4);
-
-            // Decorative shelves on right wall
-            for (let i = 0; i < 3; i++) {
-                const shelfY = -roomHeight/2 + 80 + i * 60;
-                const shelfZ = -100;
-                const shelfW = 80;
-                drawLine3D(roomWidth/2 - 2, shelfY, shelfZ - shelfW/2, roomWidth/2 - 2, shelfY, shelfZ + shelfW/2, rotX, rotY, stage4, 0.6);
-            }
-
-            // Floor tiles grid
-            const tileSize = 50;
-            for (let i = -roomWidth/2; i <= roomWidth/2; i += tileSize) {
-                drawLine3D(i, roomHeight/2, -roomDepth/2, i, roomHeight/2, roomDepth/2, rotX, rotY, stage4, 0.2);
-            }
-            for (let i = -roomDepth/2; i <= roomDepth/2; i += tileSize) {
-                drawLine3D(-roomWidth/2, roomHeight/2, i, roomWidth/2, roomHeight/2, i, rotX, rotY, stage4, 0.2);
-            }
-        }
-
-        // Animation loop
-        let lastTime = Date.now();
-        function animate() {
-            const currentTime = Date.now();
-            const deltaTime = (currentTime - lastTime) / 1000;
-            lastTime = currentTime;
-
-            // Smooth mouse interpolation
-            mouseX += (targetMouseX - mouseX) * 0.05;
-            mouseY += (targetMouseY - mouseY) * 0.05;
-
-            // Clear canvas
-            ctx.fillStyle = 'rgba(10, 10, 10, 1)';
-            ctx.fillRect(0, 0, width, height);
-
-            // Progress animation (loops)
-            animationProgress += deltaTime * 0.15;
-            if (animationProgress > 1.3) {
-                animationProgress = 0;
-            }
-
-            // Rotation based on mouse + auto-rotation
-            const rotX = -0.2 + mouseY * 0.3 + Math.sin(currentTime * 0.0002) * 0.1;
-            const rotY = mouseX * 0.4 + currentTime * 0.0001;
-
-            // Draw the interior
-            drawInterior(rotX, rotY, animationProgress);
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-
-        // Handle resize
-        window.addEventListener('resize', resizeCanvas);
-
-        // Cleanup
-        return () => {
-            window.removeEventListener('resize', resizeCanvas);
-        };
-    }
-    
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initAllEffects);
-    } else {
-        initAllEffects();
-    }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

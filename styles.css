@@ -74,36 +74,42 @@ p a:hover,
 /* FAQ Page Styles */
 .faq-section {
     padding: 80px 0;
-    background: #f8f9fa;
+    background: var(--light-gray);
 }
 
 .faq-category {
-    background: white;
-    border-radius: 8px;
-    padding: 40px;
-    margin-bottom: 40px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    background: var(--white);
+    border-radius: 0;
+    padding: 80px 0;
+    margin-bottom: 0;
+    box-shadow: none;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.faq-category-title {
-    font-size: 2rem;
-    color: #1a1a1a;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 3px solid #c19b6d;
+.faq-category:last-of-type {
+    border-bottom: none;
+}
+
+.faq-category .section-header {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 40px;
 }
 
 .faq-subcategory {
-    font-size: 1.5rem;
-    color: #333;
-    margin: 30px 0 20px 0;
-    font-weight: 600;
+    font-size: 24px;
+    color: var(--black);
+    margin: 50px auto 30px;
+    font-weight: 700;
+    max-width: 1200px;
+    padding: 0 40px;
 }
 
 .faq-item {
-    margin-bottom: 25px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid #e5e5e5;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 40px 40px;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .faq-item:last-child {
@@ -113,21 +119,21 @@ p a:hover,
 }
 
 .faq-question {
-    font-size: 1.25rem;
-    color: #1a1a1a;
-    margin-bottom: 15px;
-    font-weight: 600;
+    font-size: 20px;
+    color: var(--black);
+    margin-bottom: 20px;
+    font-weight: 700;
     line-height: 1.4;
 }
 
 .faq-answer {
-    color: #555;
+    color: var(--dark-gray);
     line-height: 1.8;
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 .faq-answer p {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .faq-answer p:last-child {
@@ -135,42 +141,44 @@ p a:hover,
 }
 
 .faq-answer ul {
-    margin: 15px 0;
-    padding-left: 20px;
+    margin: 20px 0;
+    padding-left: 30px;
 }
 
 .faq-answer li {
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     line-height: 1.8;
 }
 
 .faq-answer strong {
-    color: #333;
-    font-weight: 600;
+    color: var(--black);
+    font-weight: 700;
 }
 
 .faq-cta {
-    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-    color: white;
+    background: var(--black);
+    color: var(--white);
     text-align: center;
-    padding: 60px 40px;
-    border-radius: 8px;
-    margin-top: 40px;
+    padding: 100px 40px;
+    border-radius: 0;
+    margin-top: 0;
 }
 
 .faq-cta h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: white;
+    font-size: 42px;
+    margin-bottom: 24px;
+    color: var(--white);
+    font-weight: 700;
 }
 
 .faq-cta p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
+    font-size: 18px;
+    margin-bottom: 40px;
     opacity: 0.9;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.7;
 }
 
 .cta-buttons {
@@ -182,60 +190,78 @@ p a:hover,
 
 .btn {
     display: inline-block;
-    padding: 15px 40px;
-    border-radius: 4px;
-    font-weight: 600;
+    padding: 18px 48px;
+    border-radius: 0;
+    font-weight: 700;
     text-decoration: none;
     transition: all 0.3s ease;
-    font-size: 1rem;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .btn-primary {
-    background: #c19b6d;
-    color: white;
+    background: var(--accent);
+    color: var(--white);
 }
 
 .btn-primary:hover {
-    background: #d4af7a;
+    background: var(--accent-light);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(193, 155, 109, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
 }
 
 .btn-secondary {
     background: transparent;
-    color: white;
-    border: 2px solid white;
+    color: var(--white);
+    border: 2px solid var(--white);
 }
 
 .btn-secondary:hover {
-    background: white;
-    color: #1a1a1a;
+    background: var(--white);
+    color: var(--black);
 }
 
 /* Responsive FAQ Styles */
 @media (max-width: 768px) {
     .faq-category {
-        padding: 25px 20px;
+        padding: 60px 0;
     }
     
-    .faq-category-title {
-        font-size: 1.5rem;
+    .faq-category .section-header {
+        padding: 0 20px;
+        margin-bottom: 40px;
     }
     
     .faq-subcategory {
-        font-size: 1.25rem;
+        font-size: 20px;
+        padding: 0 20px;
+        margin: 40px auto 20px;
+    }
+    
+    .faq-item {
+        padding: 0 20px 30px;
+        margin-bottom: 30px;
     }
     
     .faq-question {
-        font-size: 1.1rem;
+        font-size: 18px;
+    }
+    
+    .faq-answer {
+        font-size: 15px;
     }
     
     .faq-cta {
-        padding: 40px 20px;
+        padding: 60px 20px;
     }
     
     .faq-cta h2 {
-        font-size: 1.5rem;
+        font-size: 32px;
+    }
+    
+    .faq-cta p {
+        font-size: 16px;
     }
     
     .cta-buttons {

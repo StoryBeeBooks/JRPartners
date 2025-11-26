@@ -53,6 +53,24 @@ a {
     transition: var(--transition);
 }
 
+/* Inline Text Links - SEO & UX */
+p a,
+.intro-text a,
+.about-text a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 107, 53, 0.3);
+    text-underline-offset: 3px;
+    font-weight: 600;
+}
+
+p a:hover,
+.intro-text a:hover,
+.about-text a:hover {
+    color: var(--accent-light);
+    text-decoration-color: var(--accent);
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -186,6 +204,58 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--accent);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
+}
+
+/* ===================================
+   Breadcrumb Navigation - SEO & UX
+   ================================== */
+.breadcrumb {
+    background: var(--light-gray);
+    padding: 12px 0;
+    margin-top: 88px;
+    border-bottom: 1px solid var(--medium-gray);
+}
+
+.breadcrumb .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+}
+
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: '›';
+    color: var(--dark-gray);
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.breadcrumb a {
+    color: var(--dark-gray);
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.breadcrumb a:hover {
+    color: var(--accent);
+}
+
+.breadcrumb li:last-child span {
+    color: var(--charcoal);
+    font-weight: 600;
 }
 
 /* ===================================

@@ -1,0 +1,19 @@
+# robots.txt for JRPartners.ca
+# https://jrpartners.ca/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin or sensitive areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Allow all images
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://jrpartners.ca/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1

@@ -47,6 +47,116 @@
     <meta name="theme-color" content="#FFFFFF">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     
+    <!-- Structured Data - LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "JRPartners",
+        "alternateName": "JR Stone Elite",
+        "description": "Premium integrated home solutions across six specialized divisions: stone retail, stone fabrication, OrdoSaxum luxury stone design, custom cabinetry, doors & windows, and landscaping services in Toronto.",
+        "url": "https://jrpartners.ca",
+        "telephone": "+1-905-761-7333",
+        "email": "support@jrpartners.ca",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Unit 2 - 1300 Alness Street",
+            "addressLocality": "Toronto",
+            "addressRegion": "ON",
+            "postalCode": "L4K 2W6",
+            "addressCountry": "CA"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "43.651070",
+            "longitude": "-79.347015"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "09:00",
+                "closes": "16:00"
+            }
+        ],
+        "priceRange": "$$-$$$",
+        "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "43.651070",
+                "longitude": "-79.347015"
+            },
+            "geoRadius": "50000"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Home Solutions Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Stone Retail",
+                        "description": "Premium natural and engineered stone materials"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Stone Fabrication",
+                        "description": "Precision-engineered stone countertops and architectural elements"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "OrdoSaxum Luxury Stone Design",
+                        "description": "Boutique high-end stone fabrication and design"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Custom Cabinetry",
+                        "description": "Bespoke kitchen and bathroom cabinetry"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Doors & Windows",
+                        "description": "High-performance door and window systems"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Landscaping",
+                        "description": "Complete landscaping solutions including hardscaping and softscaping"
+                    }
+                }
+            ]
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "150"
+        }
+    }
+    </script>
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -133,13 +243,13 @@
             <div class="intro-content">
                 <p class="intro-text">
                     JRPartners stands at the intersection of craftsmanship and innovation. Our integrated enterprise model 
-                    brings together six specialized divisions, each a leader in their field, working seamlessly to deliver 
+                    brings together <a href="services.html">six specialized divisions</a>, each a leader in their field, working seamlessly to deliver 
                     comprehensive solutions for residential and commercial projects across the Greater Toronto Area.
                 </p>
                 <p class="intro-text">
-                    What sets us apart is our ability to orchestrate complex projects with precision. When you work with 
-                    JRPartners, you're partnering with an entire ecosystem of expertise, 
-                    all committed to bringing your vision to life with uncompromising quality.
+                    What sets us apart is our ability to orchestrate complex projects with precision. When you <a href="contact.html">work with 
+                    JRPartners</a>, you're partnering with an entire ecosystem of expertise, 
+                    all committed to bringing your vision to life with uncompromising quality. <a href="about.html">Learn more about our story</a>.
                 </p>
             </div>
         </div>

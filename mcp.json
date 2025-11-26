@@ -1,0 +1,95 @@
+{
+  "name": "JRPartners",
+  "description": "Premium integrated home solutions across six specialized divisions in Toronto, Ontario. Expert stone fabrication & retail, luxury stone design (OrdoSaxum), custom cabinetry, doors & windows, and professional landscaping services.",
+  "version": "1.0.0",
+  "author": {
+    "name": "JR Stone Elite",
+    "url": "https://jrpartners.ca"
+  },
+  "contact": {
+    "email": "support@jrpartners.ca",
+    "phone": "+1-905-761-7333",
+    "address": {
+      "street": "Unit 2 - 1300 Alness Street",
+      "city": "Toronto",
+      "region": "Ontario",
+      "postal_code": "L4K 2W6",
+      "country": "Canada"
+    }
+  },
+  "services": [
+    {
+      "name": "Stone Retail",
+      "description": "Premium natural and engineered stone materials from around the world",
+      "url": "https://jrpartners.ca/services.html#stone-retail",
+      "external_url": "https://www.luxestoneandtile.com/"
+    },
+    {
+      "name": "Stone Fabrication",
+      "description": "Precision-engineered stone countertops and architectural elements using CNC technology",
+      "url": "https://jrpartners.ca/services.html#stone-fabrication",
+      "external_url": "https://www.allcornerstone.com/"
+    },
+    {
+      "name": "OrdoSaxum Stone Design",
+      "description": "Boutique luxury stone fabrication featuring high-grade natural and sintered stone",
+      "url": "https://jrpartners.ca/services.html#ordosaxum",
+      "external_url": "https://www.ordosaxum.ca/"
+    },
+    {
+      "name": "Custom Cabinetry",
+      "description": "Bespoke kitchen and bathroom cabinetry with premium materials and expert craftsmanship",
+      "url": "https://jrpartners.ca/services.html#custom-cabinetry"
+    },
+    {
+      "name": "Doors & Windows",
+      "description": "High-performance door and window systems with energy efficiency and security",
+      "url": "https://jrpartners.ca/services.html#doors-windows"
+    },
+    {
+      "name": "Landscaping",
+      "description": "Complete landscaping solutions including retaining walls, hardscaping, softscaping, and green roof installations",
+      "url": "https://jrpartners.ca/services.html#landscaping"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Toronto Showroom & Workshop",
+      "latitude": 43.651070,
+      "longitude": -79.347015,
+      "service_area": "Greater Toronto Area (GTA)"
+    }
+  ],
+  "business_hours": {
+    "monday": "8:00 AM - 6:00 PM",
+    "tuesday": "8:00 AM - 6:00 PM",
+    "wednesday": "8:00 AM - 6:00 PM",
+    "thursday": "8:00 AM - 6:00 PM",
+    "friday": "8:00 AM - 6:00 PM",
+    "saturday": "9:00 AM - 4:00 PM",
+    "sunday": "Closed",
+    "timezone": "America/Toronto"
+  },
+  "social_media": {
+    "facebook": "",
+    "instagram": "",
+    "linkedin": ""
+  },
+  "keywords": [
+    "stone fabrication Toronto",
+    "custom cabinetry",
+    "luxury stone design",
+    "landscaping services",
+    "doors and windows installation",
+    "marble countertops",
+    "granite countertops",
+    "sintered stone",
+    "hardscaping",
+    "retaining walls",
+    "home renovation Toronto",
+    "commercial construction"
+  ],
+  "certifications": [],
+  "years_in_business": 25,
+  "projects_completed": 1000
+}

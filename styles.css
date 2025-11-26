@@ -1374,194 +1374,145 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===================================
-   Work Process Section
+   Work Process Section - Professional
    ================================== */
 .work-process-section {
     padding: 140px 0;
-    background: linear-gradient(to bottom, var(--white) 0%, var(--off-white) 100%);
-    position: relative;
-    overflow: hidden;
-}
-
-.work-process-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(to bottom, 
-        transparent 0%, 
-        var(--accent) 15%, 
-        var(--accent) 85%, 
-        transparent 100%);
-    opacity: 0.3;
-    z-index: 1;
+    background: var(--white);
 }
 
 .process-header {
     text-align: center;
-    max-width: 900px;
-    margin: 0 auto 100px;
-    position: relative;
-    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto 80px;
 }
 
 .process-intro {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.8;
     color: var(--dark-gray);
-    margin: 32px 0 24px;
+    margin-top: 32px;
 }
 
-.process-tagline {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--black);
-    margin-top: 24px;
-}
-
-.process-phase {
+.process-methodology-grid {
     display: grid;
-    grid-template-columns: 1fr 60px 1fr;
-    gap: 60px;
-    margin-bottom: 100px;
-    position: relative;
-    z-index: 2;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 60px;
 }
 
-.process-phase.phase-right .phase-content {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.process-phase.phase-right .phase-number {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.process-phase.phase-left .phase-content {
-    grid-column: 3;
-    grid-row: 1;
-}
-
-.process-phase.phase-left .phase-number {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.phase-number {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 8px;
-}
-
-.number-circle {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+.methodology-phase {
     background: var(--white);
-    border: 3px solid var(--accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--accent);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 3;
+    border: 1px solid var(--light-gray);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
-.process-phase:hover .number-circle {
-    background: var(--accent);
-    color: var(--white);
-    transform: scale(1.1);
-    box-shadow: 0 8px 24px rgba(218, 165, 32, 0.3);
-}
-
-.phase-content {
-    background: var(--white);
-    padding: 48px;
+.methodology-phase:hover {
+    border-color: var(--accent);
     box-shadow: var(--shadow-md);
-    transition: var(--transition);
-    border-left: 4px solid var(--accent);
 }
 
-.process-phase:hover .phase-content {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+.phase-header {
+    background: var(--off-white);
+    padding: 32px;
+    border-bottom: 3px solid var(--accent);
+}
+
+.phase-number-label {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
 }
 
 .phase-title {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--black);
-    margin-bottom: 12px;
-    line-height: 1.3;
-}
-
-.phase-tagline {
-    font-size: 16px;
-    font-weight: 600;
-    font-style: italic;
-    color: var(--accent);
-    margin-bottom: 20px;
-}
-
-.phase-description {
-    font-size: 17px;
-    line-height: 1.7;
-    color: var(--dark-gray);
-    margin-bottom: 32px;
-}
-
-.phase-details {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.phase-detail-item {
-    padding-left: 24px;
-    border-left: 2px solid var(--light-gray);
-    transition: var(--transition);
-}
-
-.phase-detail-item:hover {
-    border-left-color: var(--accent);
-}
-
-.phase-detail-item h4 {
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 700;
     color: var(--black);
     margin-bottom: 8px;
+    line-height: 1.3;
 }
 
-.phase-detail-item p {
+.phase-subtitle {
+    font-size: 15px;
+    color: var(--medium-gray);
+    font-style: italic;
+    margin: 0;
+}
+
+.phase-body {
+    padding: 32px;
+    flex-grow: 1;
+    background: var(--white);
+}
+
+.phase-intro {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--dark-gray);
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.phase-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.phase-list li {
+    position: relative;
+    padding-left: 24px;
     font-size: 15px;
     line-height: 1.7;
     color: var(--medium-gray);
 }
 
+.phase-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.phase-list li strong {
+    display: block;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 4px;
+    font-size: 15px;
+}
+
 .process-closing {
     text-align: center;
     margin-top: 80px;
-    padding-top: 60px;
-    border-top: 2px solid var(--light-gray);
-    position: relative;
-    z-index: 2;
+    padding: 48px;
+    background: var(--off-white);
+    border-top: 3px solid var(--accent);
 }
 
-.closing-tagline {
-    font-size: 24px;
-    font-weight: 600;
+.closing-statement {
+    font-size: 20px;
+    color: var(--dark-gray);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.closing-statement strong {
     color: var(--black);
-    font-style: italic;
+    font-weight: 700;
 }
 
 /* ===================================
@@ -1884,66 +1835,33 @@ h1, h2, h3, h4, h5, h6 {
         padding: 80px 0;
     }
     
-    .work-process-section::before {
-        display: none;
-    }
-    
     .process-header {
         margin-bottom: 60px;
     }
     
-    .process-intro {
-        font-size: 16px;
-    }
-    
-    .process-phase {
-        grid-template-columns: 60px 1fr;
+    .process-methodology-grid {
+        grid-template-columns: 1fr;
         gap: 24px;
-        margin-bottom: 60px;
     }
     
-    .process-phase.phase-right .phase-content,
-    .process-phase.phase-left .phase-content {
-        grid-column: 2;
-        grid-row: 1;
+    .phase-header {
+        padding: 24px;
     }
     
-    .process-phase.phase-right .phase-number,
-    .process-phase.phase-left .phase-number {
-        grid-column: 1;
-        grid-row: 1;
-    }
-    
-    .phase-content {
-        padding: 32px 24px;
+    .phase-body {
+        padding: 24px;
     }
     
     .phase-title {
         font-size: 22px;
     }
     
-    .phase-tagline {
-        font-size: 14px;
-    }
-    
-    .phase-description {
-        font-size: 15px;
-    }
-    
-    .phase-detail-item h4 {
-        font-size: 15px;
-    }
-    
-    .phase-detail-item p {
-        font-size: 14px;
-    }
-    
     .process-closing {
-        margin-top: 40px;
-        padding-top: 40px;
+        margin-top: 60px;
+        padding: 32px 24px;
     }
     
-    .closing-tagline {
+    .closing-statement {
         font-size: 18px;
     }
     
@@ -2030,33 +1948,34 @@ h1, h2, h3, h4, h5, h6 {
     }
     
     /* Work Process Mobile */
-    .number-circle {
-        width: 48px;
-        height: 48px;
-        font-size: 18px;
+    .phase-header {
+        padding: 20px;
     }
     
-    .process-phase {
-        grid-template-columns: 48px 1fr;
-        gap: 16px;
-        margin-bottom: 48px;
-    }
-    
-    .phase-content {
-        padding: 24px 16px;
+    .phase-body {
+        padding: 20px;
     }
     
     .phase-title {
         font-size: 20px;
     }
     
-    .phase-detail-item {
-        padding-left: 16px;
+    .phase-intro {
+        font-size: 15px;
     }
     
-    .closing-tagline {
+    .phase-list li {
+        font-size: 14px;
+    }
+    
+    .phase-list li strong {
+        font-size: 14px;
+    }
+    
+    .closing-statement {
         font-size: 16px;
     }
+
 
     
     .contact-form {

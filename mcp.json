@@ -21,35 +21,35 @@
     {
       "name": "Stone Retail",
       "description": "Premium natural and engineered stone materials from around the world",
-      "url": "https://jrpartners.ca/services.html#stone-retail",
+      "url": "https://jrpartners.ca/services#stone-retail",
       "external_url": "https://www.luxestoneandtile.com/"
     },
     {
       "name": "Stone Fabrication",
       "description": "Precision-engineered stone countertops and architectural elements using CNC technology",
-      "url": "https://jrpartners.ca/services.html#stone-fabrication",
+      "url": "https://jrpartners.ca/services#stone-fabrication",
       "external_url": "https://www.allcornerstone.com/"
     },
     {
       "name": "OrdoSaxum Stone Design",
       "description": "Boutique luxury stone fabrication featuring high-grade natural and sintered stone",
-      "url": "https://jrpartners.ca/services.html#ordosaxum",
+      "url": "https://jrpartners.ca/services#ordosaxum",
       "external_url": "https://www.ordosaxum.ca/"
     },
     {
       "name": "Custom Cabinetry",
       "description": "Bespoke kitchen and bathroom cabinetry with premium materials and expert craftsmanship",
-      "url": "https://jrpartners.ca/services.html#custom-cabinetry"
+      "url": "https://jrpartners.ca/services#custom-cabinetry"
     },
     {
       "name": "Doors & Windows",
       "description": "High-performance door and window systems with energy efficiency and security",
-      "url": "https://jrpartners.ca/services.html#doors-windows"
+      "url": "https://jrpartners.ca/services#doors-windows"
     },
     {
       "name": "Hardscaping",
       "description": "Expert hardscape construction and engineering, from interlocking driveways to outdoor living features",
-      "url": "https://jrpartners.ca/services.html#hardscaping"
+      "url": "https://jrpartners.ca/services#hardscaping"
     }
   ],
   "locations": [

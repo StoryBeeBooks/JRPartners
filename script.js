@@ -3,7 +3,7 @@ async function loadFooter() {
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder) {
         try {
-            const response = await fetch('footer.html');
+            const response = await fetch('/footer.html?v=2', { cache: 'no-cache' });
             if (response.ok) {
                 const footerHTML = await response.text();
                 footerPlaceholder.innerHTML = footerHTML;
